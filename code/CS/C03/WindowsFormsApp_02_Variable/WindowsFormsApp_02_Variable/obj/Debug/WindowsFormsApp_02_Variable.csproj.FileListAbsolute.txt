@@ -1,0 +1,10 @@
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_02_Variable\WindowsFormsApp_02_Variable\obj\Debug\WindowsFormsApp_02_Variable.csproj.AssemblyReference.cache
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_02_Variable\WindowsFormsApp_02_Variable\obj\Debug\WindowsFormsApp_02_Variable.Form1.resources
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_02_Variable\WindowsFormsApp_02_Variable\obj\Debug\WindowsFormsApp_02_Variable.Properties.Resources.resources
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_02_Variable\WindowsFormsApp_02_Variable\obj\Debug\WindowsFormsApp_02_Variable.csproj.GenerateResource.cache
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_02_Variable\WindowsFormsApp_02_Variable\obj\Debug\WindowsFormsApp_02_Variable.csproj.CoreCompileInputs.cache
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_02_Variable\WindowsFormsApp_02_Variable\bin\Debug\WindowsFormsApp_02_Variable.exe.config
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_02_Variable\WindowsFormsApp_02_Variable\bin\Debug\WindowsFormsApp_02_Variable.exe
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_02_Variable\WindowsFormsApp_02_Variable\bin\Debug\WindowsFormsApp_02_Variable.pdb
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_02_Variable\WindowsFormsApp_02_Variable\obj\Debug\WindowsFormsApp_02_Variable.exe
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_02_Variable\WindowsFormsApp_02_Variable\obj\Debug\WindowsFormsApp_02_Variable.pdb

@@ -1,0 +1,4 @@
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_01_Base\WindowsFormsApp_01_Base\obj\Debug\WindowsFormsApp_01_Base.csproj.AssemblyReference.cache
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_01_Base\WindowsFormsApp_01_Base\obj\Debug\WindowsFormsApp_01_Base.Properties.Resources.resources
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_01_Base\WindowsFormsApp_01_Base\obj\Debug\WindowsFormsApp_01_Base.csproj.GenerateResource.cache
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_01_Base\WindowsFormsApp_01_Base\obj\Debug\WindowsFormsApp_01_Base.csproj.CoreCompileInputs.cache

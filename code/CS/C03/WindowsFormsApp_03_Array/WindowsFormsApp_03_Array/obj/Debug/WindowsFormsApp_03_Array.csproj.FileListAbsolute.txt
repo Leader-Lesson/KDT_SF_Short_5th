@@ -1,0 +1,10 @@
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_03_Array\WindowsFormsApp_03_Array\bin\Debug\WindowsFormsApp_03_Array.exe.config
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_03_Array\WindowsFormsApp_03_Array\bin\Debug\WindowsFormsApp_03_Array.exe
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_03_Array\WindowsFormsApp_03_Array\bin\Debug\WindowsFormsApp_03_Array.pdb
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_03_Array\WindowsFormsApp_03_Array\obj\Debug\WindowsFormsApp_03_Array.csproj.AssemblyReference.cache
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_03_Array\WindowsFormsApp_03_Array\obj\Debug\WindowsFormsApp_03_Array.Form1.resources
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_03_Array\WindowsFormsApp_03_Array\obj\Debug\WindowsFormsApp_03_Array.Properties.Resources.resources
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_03_Array\WindowsFormsApp_03_Array\obj\Debug\WindowsFormsApp_03_Array.csproj.GenerateResource.cache
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_03_Array\WindowsFormsApp_03_Array\obj\Debug\WindowsFormsApp_03_Array.csproj.CoreCompileInputs.cache
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_03_Array\WindowsFormsApp_03_Array\obj\Debug\WindowsFormsApp_03_Array.exe
+C:\Users\codingon\Desktop\github\KDT_SF_Short_5th\code\lecture_reference\CS\C03\WindowsFormsApp_03_Array\WindowsFormsApp_03_Array\obj\Debug\WindowsFormsApp_03_Array.pdb
