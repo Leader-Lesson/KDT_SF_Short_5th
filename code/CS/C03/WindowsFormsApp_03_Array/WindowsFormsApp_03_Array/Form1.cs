@@ -81,7 +81,7 @@ namespace WindowsFormsApp_03_Array
             2차원 배열에서는 → 행 × 열
 
             🔹 GetLength(int dimension) (메서드, method)
-            차원(dimension)별로 크기(길이)를 구하는 함수
+            차원(dimension)별로 크기(길이)를 구하는 함수 
 
             dimension = 0이면 👉 첫 번째 차원 = 행(row)
 
@@ -92,16 +92,59 @@ namespace WindowsFormsApp_03_Array
             // (참고) 메서드란?
             // = 클래스의 기능을 수행하는 함수!
             // 문자열도 "string" 이라는 클래스이기 때문에, 다양한 기능 메서드를 보유함!
+            // Ex1)
             string[] a = "1 2 3".Split(' ');
             textBox1.Text = a[0] + "\r\n"; 
             textBox1.Text += a[1] + "\r\n"; 
             textBox1.Text += a[2] + "\r\n";
-            string codingon = "codingon";
-            //textBox1.Text = codingon.IndexOf('o').ToString();
-            //codingon.Replace("on", "off");
 
-            
+            // Ex2)
+            string codingon = "codingon";
+            textBox1.Text = codingon.IndexOf('o').ToString();
+            codingon.Replace("on", "ozff");
+
+            // Ex3)
+            string q = "string 5";
+            string[] parsed = q.Split(' '); // [string, 5]
+            int count = int.Parse(parsed[1]); //  5
+            textBox1.Text = "";
+            for (int i = 0; i < count; i++) // 0 ~ 4
+            {
+                textBox1.Text += parsed[0];
+            }
+
+            // #3. 함수
+            int num = 200;
+            int result = Add(100, num);
+
+            textBox1.Text = result.ToString();
+            Nothing();
+
+            int[] result2 = DivideNumbers(20, 10); // [ x, y ]
+            textBox1.Text = $"몫: {result2[0]}, 나머지: {result2[1]}";
+
+
         }
+
+        int Add(int x, int y)
+        {
+             return x + y;
+        }
+
+        void Nothing()
+        {
+            textBox1.Text += "Nothing이 나옴!";
+        }
+        // 함수 실습!
+
+        int[] DivideNumbers(int num, int num2)
+        {
+            int[] result = new int[2];
+            result[0] = num / num2;
+            result[1] = num % num2;
+            return result;
+        }
+
     } 
 }
 
