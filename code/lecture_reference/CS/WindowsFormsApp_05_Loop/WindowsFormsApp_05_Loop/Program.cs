@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp_04_Loop
+namespace WindowsFormsApp_05_Loop
 {
     internal static class Program
     {

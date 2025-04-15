@@ -16,6 +16,10 @@ namespace WindowsFormsApp_04_Condition
         {
             InitializeComponent();
 
+            // #region 이란?
+            // ㄴ VS에서 특정 코드 블록을 접어서 숨기게 만들어주는 기능.
+
+
             #region #1 if문 강의
             int inputNum = 10;
 
@@ -277,5 +281,7 @@ namespace WindowsFormsApp_04_Condition
             }
         }
         #endregion
-    }
+
+     
+        }
 }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{818943D9-1BDE-42FA-BB5D-C436085D2852}</ProjectGuid>
+    <ProjectGuid>{820528BA-D1BE-439B-ACFE-D807E9B8631C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsApp_04_Loop</RootNamespace>
-    <AssemblyName>WindowsFormsApp_04_Loop</AssemblyName>
+    <RootNamespace>WindowsFormsApp_05_Loop</RootNamespace>
+    <AssemblyName>WindowsFormsApp_05_Loop</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

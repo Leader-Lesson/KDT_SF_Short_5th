@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp_04_Loop.Properties
+namespace WindowsFormsApp_05_Loop.Properties
 {
 
 
