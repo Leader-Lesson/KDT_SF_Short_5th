@@ -17,10 +17,18 @@ namespace WindowsFormsApp_03_Array
         {
             InitializeComponent();
 
-            // #1. 배열
-            // 변수를 여러개를 하나의 배열로 처리.
-            int num1, num2, num3, num4, num5, num6, num7, num8;
+            // #1. 배열 (Array)
+            // 같은 자료형 변수 여러개를 하나의 배열로 처리.
+            // ㄴ 한 번에 여러 값을 저장할 수 있음.
+            int num1, num2, num3, num4, num5, num6, num7, num8; // 힘듦.
             int[] nums = new int[8];    // 정수형 8개 저장할 수 있는 배열
+
+            // 배열의 이름 : nums
+            // 배열의 자료형 : int[]  --> 정수형 배열
+            // 배열 선언 및 메모리 공간 확보 : nums = new int[8]  --> 8개 짜리 공간을 만듦 (0번 부터 7번까지 인덱스 사용)
+            // 배열의 요소(아이템) : 배열 안에 있는 데이터 하나하나
+            // 배열의 위치(인덱스) : 0 부터 시작 - zero based numbering
+            // 배열의 길이(크기) : 요소의 개수와 동일
 
             // 입력되는 데이터의 크기를 알 수 없을 때, 배열로 처리
             // (참고) 사용자가 몇 개를 입력할 지 정해져 있지 않은 상황에서는 프로그램이 그 숫자를 입력받은 뒤, 해당 개수만큼 배열을 만들어야 함.
@@ -33,95 +41,136 @@ namespace WindowsFormsApp_03_Array
 
             //textBox1.Text = oneOfData.ToString();
 
-            string myName = "Leader_" + "Damon" + " " + 999.ToString();
-
-            //textBox1.Text = myName;
-
+            // 배열 할당. 및 초기화
             int[] array1 = new int[5];
             int[] array2 = { 1, 2, 3, 4, 5, 6 }; // new int[6]; 와 유사
+           
             
             // 2차원 배열 (행과 열로 구성)
-            int[,] multiDimensionalArray1 = new int[2, 3];
-            int[,] multiDimensionalArray2 = { { 1, 2, 3 }, { 4, 5, 6 } }; // new int[2, 3]; 와 유사.
+            // ㄴ 배열 안에 배열이 들어갈 수 있음 (중첩 가능)
+            // [,] -> 배열의 '모양'을 미리 정하는 표시라 이해.
+            // [] -> 하나 (1차원 배열) / [,] -> 두개 (2차원 배열)
+            // {} -> 실제 값 넣기.
+            int[,] multiArray1 = new int[2, 3];
+            int[,] multiArray2 = { { 1, 2, 3 }, { 4, 5, 6 } }; // new int[2, 3]; 와 유사.
+
+
+            string[,] korean = new string[,] 
+            { 
+                { "가", "나", "다" }, 
+                { "라", "마", "바" }, 
+                { "사", "아", "자" } 
+            };
+            textBox1.Text = korean[0,0]; // 가
+            textBox1.Text = korean[0,1]; // 나
+            textBox1.Text = korean[1,0]; // 라
+
+            // *반짝 실습
+            // Quiz 1) '가자' 글씨 출력하기
+            textBox1.Text = korean[0,0] + korean[2,2]; // 가자
+
+            // Quiz 2) 3차원 배열에서 숫자 8 출력
+            int[,,] nums2 = new int[,,]
+            {
+                {
+                    { 1, 2, 3},
+                    { 4, 5, 6 }
+                },
+                {
+                    { 7, 8, 9 },
+                    { 10, 11, 12 },
+                }
+            };
+            textBox1.Text = nums2[1, 0, 1].ToString();
+
+            textBox1.Text = "-------------- \r\n";
 
             // 재그드 배열 (배열의 배열)
             // = 들쭉날쭉한 배열 (행마다 열 길이가 다름)
-        
-            int[][] jaggedArray = new int[6][]; // 행은 6으로 고정, 열의 길이는 자유
-            jaggedArray[0] = new int[4] { 1, 2, 3, 4 };
-            jaggedArray[1] = new int[3] { 1, 2, 3 };
+            // [][] 중첩된 대괄호 사용
+            // 첫 번째 [] : 바깥쪽 배열
+            // 두 번째 [] : 안쪽 배열
 
-            for (int i = 0; i < array2.Length; i++)
-            {
-                textBox1.Text += array2[i].ToString() + "\r\n";
-            }
-            textBox1.Text = array2.Length.ToString() + "\r\n";
-            textBox1.Text += multiDimensionalArray2.Length.ToString();
-            textBox1.Text += "\r\n";
+            int[][] jaggedArray = new int[6][]; // 행은 6으로 고정, 열의 길이는 자유 (바깥쪽 배열 : 줄 6개 만듬)
 
-            multiDimensionalArray2.GetLength(0); 
-            textBox1.Text += multiDimensionalArray2.GetLength(0).ToString() + "\r\n";   // 행의 개수 물어보기.
-            textBox1.Text += multiDimensionalArray2.GetLength(1).ToString() + "\r\n";   // 열의 개수 물어보기.
+            // # 각 줄에 다른 길이의 배열 넣기
+            jaggedArray[0] = new int[4] { 1, 2, 3, 4 }; // 첫 번째 줄 : 4개
+            jaggedArray[1] = new int[3] { 1, 2, 3 }; // 두 번째 줄 : 3개
 
-            for (int i = 0; i<multiDimensionalArray2.GetLength(0); i++)
-            {
-                for(int j = 0; j<multiDimensionalArray2.GetLength(1); j++)
-                {
-                    textBox1.Text += multiDimensionalArray2[i, j].ToString() + "\r\n";
-                }
-            }
 
             // (참고) 재그드 배열이 잘 이해안되는 분들을 위한!
             /*
-            🔹 Length (속성, property) --> 속성이므로, ()와 인자를 가질 수 없음!
-            배열 전체의 "길이", 즉 요소 개수 전체
+                🔹 Length (속성, property) --> 속성이므로, ()와 인자를 가질 수 없음!
+                배열 전체의 "길이", 즉 요소 개수 전체
 
-            1차원 배열에서는 → 요소 개수
+                1차원 배열에서는 → 요소 개수
 
-            2차원 배열에서는 → 행 × 열
-
-            🔹 GetLength(int dimension) (메서드, method)
-            차원(dimension)별로 크기(길이)를 구하는 함수 
-
-            dimension = 0이면 👉 첫 번째 차원 = 행(row)
-
-            dimension = 1이면 👉 두 번째 차원 = 열(column)
+                2차원 배열에서는 → 행 × 열
             */
 
-            // #2. 문자열 메서드
+
+            /*
+                🔹 GetLength(int dimension) (메서드, method)
+                차원(dimension)별로 크기(길이)를 구하는 함수 
+
+                dimension = 0이면 👉 첫 번째 차원 = 행(row)
+
+                dimension = 1이면 👉 두 번째 차원 = 열(column)
+             */
+            multiArray2.GetLength(0);
+            textBox1.Text += multiArray2.GetLength(0).ToString() + "\r\n";   // 행의 개수 물어보기.
+            textBox1.Text += multiArray2.GetLength(1).ToString() + "\r\n";   // 열의 개수 물어보기.
+
+            for (int i = 0; i<multiArray2.GetLength(0); i++)
+            {
+                for(int j = 0; j<multiArray2.GetLength(1); j++)
+                {
+                    textBox1.Text += multiArray2[i, j].ToString() + "\r\n";
+                }
+            }
+
+
+
+            // #2. 문자열 내장 메서드
+            // ㄴ string 타입(문자열)이 기본적으로 가지고 있는 기능(함수).
+
             // (참고) 메서드란?
             // = 클래스의 기능을 수행하는 함수!
-            // 문자열도 "string" 이라는 클래스이기 때문에, 다양한 기능 메서드를 보유함!
+            // 문자열도 "string" 타입 이라는 클래스이기 때문에, 점(.)을 찍고 다양한 기능을 사용 할 수 있음.
             // Ex1)
             string[] a = "1 2 3".Split(' ');
-            textBox1.Text = a[0] + "\r\n"; 
-            textBox1.Text += a[1] + "\r\n"; 
-            textBox1.Text += a[2] + "\r\n";
+            //textBox1.Text = a[0] + "\r\n"; 
+            //textBox1.Text += a[1] + "\r\n"; 
+            //textBox1.Text += a[2] + "\r\n";
 
             // Ex2)
             string codingon = "codingon";
-            textBox1.Text = codingon.IndexOf('o').ToString();
+            //textBox1.Text = codingon.IndexOf('o').ToString();
             codingon.Replace("on", "ozff");
 
             // Ex3)
             string q = "string 5";
             string[] parsed = q.Split(' '); // [string, 5]
             int count = int.Parse(parsed[1]); //  5
-            textBox1.Text = "";
-            for (int i = 0; i < count; i++) // 0 ~ 4
-            {
-                textBox1.Text += parsed[0];
-            }
+            //textBox1.Text = "";
+            //for (int i = 0; i < count; i++) // 0 ~ 4
+            //{
+            //    textBox1.Text += parsed[0];
+            //}
+
+
+
+
 
             // #3. 함수
             int num = 200;
             int result = Add(100, num);
 
-            textBox1.Text = result.ToString();
+            //textBox1.Text = result.ToString();
             Nothing();
 
             int[] result2 = DivideNumbers(20, 10); // [ x, y ]
-            textBox1.Text = $"몫: {result2[0]}, 나머지: {result2[1]}";
+            //textBox1.Text = $"몫: {result2[0]}, 나머지: {result2[1]}";
 
 
         }
@@ -133,7 +182,7 @@ namespace WindowsFormsApp_03_Array
 
         void Nothing()
         {
-            textBox1.Text += "Nothing이 나옴!";
+            //textBox1.Text += "Nothing이 나옴!";
         }
         // 함수 실습!
 

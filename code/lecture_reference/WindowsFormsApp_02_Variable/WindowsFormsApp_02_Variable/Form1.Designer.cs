@@ -34,19 +34,19 @@
             // 
             // textBox_print
             // 
-            this.textBox_print.Location = new System.Drawing.Point(151, 139);
+            this.textBox_print.Location = new System.Drawing.Point(94, 54);
             this.textBox_print.Multiline = true;
             this.textBox_print.Name = "textBox_print";
-            this.textBox_print.Size = new System.Drawing.Size(484, 162);
+            this.textBox_print.Size = new System.Drawing.Size(614, 372);
             this.textBox_print.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("NanumGothicExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(147, 117);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(90, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 19);
+            this.label1.Size = new System.Drawing.Size(71, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Result :";
             // 
