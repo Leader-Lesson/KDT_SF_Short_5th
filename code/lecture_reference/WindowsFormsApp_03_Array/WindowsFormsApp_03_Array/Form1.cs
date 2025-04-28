@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Common;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -162,11 +163,12 @@ namespace WindowsFormsApp_03_Array
 
 
 
-            // #3. 함수
+            
             int num = 200;
             int result = Add(100, num);
 
             //textBox1.Text = result.ToString();
+            // 함수 사용
             Nothing();
 
             int[] result2 = DivideNumbers(20, 10); // [ x, y ]
@@ -174,18 +176,43 @@ namespace WindowsFormsApp_03_Array
 
 
         }
+        // #3. 함수
+        // - 특정 작업을 수행하기 위해 독립적으로 설계된 코드 집합.
 
+        // 구조
+        // - 자료형 : 이 함수가 돌려줄 값(return 값) 의 타입
+        // - name : 함수명
+        // - parameter : 함수 선언시 함수가 받아야 하는 입력값(=매개변수)들
+        //   ㄴ 함수에 전달되는 외부 데이터
+        // - Scope : 코드 실행 범위(유효 범위).
+
+        // 용어 정리
+        // - 함수 정의(선언) : 함수를 "생성"
+        // - 함수 호출: 함수를 "사용"
+
+        // return? (반환값)
+        // : 함수 내부 코드의 "최종 결과 값"
+        // - 함수 본문에서 최종 결과를 저장하고 돌려주는 키워드
+        // return 키워드를 만나면 함수 실행 중단
+        // (return 다음에 코드 더 작성 의미 x)
+
+        // 함수 선언
+        // #1. return 값이 있는 함수.
         int Add(int x, int y)
         {
              return x + y;
         }
 
+        // #2. return 값이 없는 함수.
+        // void
+        // - 반환값이 없을 때 사용하는 키워드.
+        // C#은 반환 타입을 무조건 명시해야 하는 언어입니다.
+        // 그래서 반환할 값이 없어도 void를 써야 "이 함수는 결과를 안 돌려줘요"라고 정확히 알려주는 겁니다.
+        
         void Nothing()
         {
             //textBox1.Text += "Nothing이 나옴!";
         }
-        // 함수 실습!
-
         int[] DivideNumbers(int num, int num2)
         {
             int[] result = new int[2];
@@ -194,7 +221,8 @@ namespace WindowsFormsApp_03_Array
             return result;
         }
 
-    } 
+        // 함수 실습!
+    }
 }
 
 /**

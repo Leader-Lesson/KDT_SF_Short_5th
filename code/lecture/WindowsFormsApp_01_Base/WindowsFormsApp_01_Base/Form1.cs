@@ -16,7 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1 // 프로젝트 이름.
+namespace WindowsFormsApp_01_Base // 프로젝트 이름.
 {
     public partial class Form1 : Form
     // Form1 이라는 이름의 클래스, Form 클래스를 상속받음.
