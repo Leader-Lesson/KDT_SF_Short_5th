@@ -40,21 +40,23 @@ namespace WindowsFormsApp_04_Condition
                 // 위 조건이 모두 false 일 경우 실행
             }
 
+            // 조건과 조건을 비교하는 연산을 수행
             bool is_true = inputNum == 10; // == 의 연산결과 : true
 
             // (조건1) OR (조건2)
             bool compared = (inputNum > 10 || inputNum < 5);
+
             #endregion
 
             #region #1-2 실습. if 문
-            //if (CoinMatch(true)) 
-            //{
-            //    textBox_result.Text = "승리 ~!"; // 일치하면 => 이김 => 이겼기에 승리!
-            //}
-            //else
-            //{
-            //    textBox_result.Text = "패배 ..ㅠ ";
-            //}
+            if (CoinMatch(true))
+            {
+                textBox_result.Text = "승리 ~!"; // 일치하면 => 이김 => 이겼기에 승리!
+            }
+            else
+            {
+                textBox_result.Text = "패배 ..ㅠ ";
+            }
             #endregion
 
 
@@ -108,15 +110,32 @@ namespace WindowsFormsApp_04_Condition
         {
             // 난수를 생성하기 위한 클래스 (기본적으로 현재시간을 기준으로 시드 자동 생성)
             Random randomObj = new Random();
+            /*
+             * Random : 클래스
+             * new Random() : Random 클래스를 이용해서 'random'이라는 객체를 만든 것.
+             * random : 만든 객체
+            */
+             
+
 
             // 짝수/홀수로 나눠서 0 or 1 결정하게 하기.
             int coin = randomObj.Next() % 2; // rnd.Next() : 0보다 크고 매우 큰 int 값을 반환
             /*
              * (참고)
-             * rnd.Next() - 0 이상 int.MaxValue 미만 까지 (약 ~21억)
+             * rnd.Next() - 0 이상 int.MaxValue 미만 까지 (약 ~21억) : 범위를 주지 않으면, 아주 큰 양수 범위 안에서 랜덤 뽑기.
              * rnd.Next(max) - 0 이상 max 미만
              * rnd.Next(min, max) - min 이상 max 미만
+             * random.NextDouble() - 0.0 이상 1.0 미만 소수 랜덤 생성
+             * 
+             * Random은 재사용이 좋다
              */
+
+            /*
+             * Math (= 내장 클래스)
+             * Math.Round() - 반올림       ex) 2.5 -> 3  / 2.2 -> 2
+             * Math.Floor() - 내림, 버림    ex) 2.7 -> 2
+             * Math.Ceiling() - 올림      ex) 2.1 -> 3
+            */
 
             if ((coin == 1 && type == true) || (coin == 0 && type == false))
             {
@@ -133,10 +152,8 @@ namespace WindowsFormsApp_04_Condition
         }
         #endregion
 
+        #region #1-3 실습. 사용자 입력 받기 - 이벤트 연습
         // 사용자 입력 받기 - 이벤트 연습.
-
-
-
 
         //private void button_input_Click(object sender, EventArgs e)
         //{
@@ -145,7 +162,6 @@ namespace WindowsFormsApp_04_Condition
         //    //// textBox_result.Text로 복사
         //    //textBox_result.Text = textBox_input.Text;
 
-        //    #region #1-3 실습. 사용자 입력
 
         //    bool input = false; // 기본값 설정
 
@@ -187,8 +203,8 @@ namespace WindowsFormsApp_04_Condition
         //        gameResultMessage = "패배 ㅠㅠ";
         //    }
         //    textBox_result.Text += gameResultMessage + "\r\n";
-        //    #endregion
         //}
+        #endregion
 
         #region #3 Enum 열거형
         // ㄴ 관련된 값들을 정수 기반 상수 목록으로 이름 붙여서 그룹화한 사용자 정의 자료형.

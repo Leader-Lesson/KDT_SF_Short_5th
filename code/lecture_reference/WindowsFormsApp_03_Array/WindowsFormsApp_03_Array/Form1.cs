@@ -99,38 +99,9 @@ namespace WindowsFormsApp_03_Array
             jaggedArray[1] = new int[3] { 1, 2, 3 }; // 두 번째 줄 : 3개
 
 
-            // (참고) 재그드 배열이 잘 이해안되는 분들을 위한!
-            /*
-                🔹 Length (속성, property) --> 속성이므로, ()와 인자를 가질 수 없음!
-                배열 전체의 "길이", 즉 요소 개수 전체
-
-                1차원 배열에서는 → 요소 개수
-
-                2차원 배열에서는 → 행 × 열
-            */
-
-
-            /*
-                🔹 GetLength(int dimension) (메서드, method)
-                차원(dimension)별로 크기(길이)를 구하는 함수 
-
-                dimension = 0이면 👉 첫 번째 차원 = 행(row)
-
-                dimension = 1이면 👉 두 번째 차원 = 열(column)
-             */
             multiArray2.GetLength(0);
             textBox1.Text += multiArray2.GetLength(0).ToString() + "\r\n";   // 행의 개수 물어보기.
             textBox1.Text += multiArray2.GetLength(1).ToString() + "\r\n";   // 열의 개수 물어보기.
-
-            for (int i = 0; i<multiArray2.GetLength(0); i++)
-            {
-                for(int j = 0; j<multiArray2.GetLength(1); j++)
-                {
-                    textBox1.Text += multiArray2[i, j].ToString() + "\r\n";
-                }
-            }
-
-
 
             // #2. 문자열 내장 메서드
             // ㄴ string 타입(문자열)이 기본적으로 가지고 있는 기능(함수).
@@ -153,17 +124,41 @@ namespace WindowsFormsApp_03_Array
             string q = "string 5";
             string[] parsed = q.Split(' '); // [string, 5]
             int count = int.Parse(parsed[1]); //  5
-            //textBox1.Text = "";
-            //for (int i = 0; i < count; i++) // 0 ~ 4
-            //{
-            //    textBox1.Text += parsed[0];
-            //}
+
+            #region 문자열 실습
+            // 1. 10칸짜리 문자열 배열 생성
+            string[] results = new string[10];
 
 
+            // 2. 각 요소에 문자열 함수 적용
+            results[0] = "동해 물과 백두산이".IndexOf("백두산").ToString(); // 0번: IndexOf
+            results[1] = "토요일에 먹는 토마토".LastIndexOf("토").ToString(); // 1번: LastIndexOf
+            results[2] = "질서 있는 퇴장".Contains("퇴").ToString(); // 2번: Contains
+            results[3] = "그 사람의 그림자는 그랬다".Replace("그", "이"); // 3번: Replace
+            results[4] = "삼성 갤럭시".Insert(2, "애플"); // 4번: Insert (삼 + 성 + (3) + 애플)
+            results[5] = "오늘은 왠지 더 배고프다".Remove("오늘은 왠지 더 배고프다".IndexOf("더"), 1); // 5번: Remove ("더" 삭제)
 
+            // Split 사용
+            string data = "이름, 나이, 전화번호";
+            string[] splitData = data.Split(',');
 
+            // 배열 3칸에 각각 저장
+            results[6] = splitData[0].Trim(); // "이름"
+            results[7] = splitData[1]; // " 나이"
+            results[8] = splitData[2]; // " 전화번호"
+            // Trim : 문자열의 양쪽 끝에 있는 공백을 없애주는 함수.
 
-            
+            // 문자열.Substring(시작위치, 가져올개수);
+            // 시작위치 : 어디서부터 자를지, 인덱스 지정 (0부터)
+            // 가져올 개수 : 몇 글자를 가져올지 숫자로 지정
+            string message = "우리 나라 만세";
+
+            // "나라" 꺼내기
+            string sub = message.Substring(3, 2);
+            results[9] = sub;
+            #endregion
+
+            // #3-1. 함수
             int num = 200;
             int result = Add(100, num);
 
@@ -171,6 +166,8 @@ namespace WindowsFormsApp_03_Array
             // 함수 사용
             Nothing();
 
+            // ---------------
+            // 함수 실습1)
             int[] result2 = DivideNumbers(20, 10); // [ x, y ]
             //textBox1.Text = $"몫: {result2[0]}, 나머지: {result2[1]}";
 
@@ -206,13 +203,15 @@ namespace WindowsFormsApp_03_Array
         // #2. return 값이 없는 함수.
         // void
         // - 반환값이 없을 때 사용하는 키워드.
-        // C#은 반환 타입을 무조건 명시해야 하는 언어입니다.
-        // 그래서 반환할 값이 없어도 void를 써야 "이 함수는 결과를 안 돌려줘요"라고 정확히 알려주는 겁니다.
+        // (C#은 반환 타입을 무조건 명시해야 하는 언어입니다.)
+        // (그래서 반환할 값이 없어도 void를 써야 "이 함수는 결과를 안 돌려줘요"라고 정확히 알려주는 겁니다.)
         
         void Nothing()
         {
-            //textBox1.Text += "Nothing이 나옴!";
+            textBox1.Text += "Nothing이 나옴!";
         }
+
+        // 함수 실습1)
         int[] DivideNumbers(int num, int num2)
         {
             int[] result = new int[2];
@@ -221,7 +220,7 @@ namespace WindowsFormsApp_03_Array
             return result;
         }
 
-        // 함수 실습!
+
     }
 }
 
