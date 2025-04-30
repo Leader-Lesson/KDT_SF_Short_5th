@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{820528BA-D1BE-439B-ACFE-D807E9B8631C}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>WindowsFormsApp_05_Loop</RootNamespace>
-    <AssemblyName>WindowsFormsApp_05_Loop</AssemblyName>
+    <ProjectGuid>{DD57D6F2-C7D7-463C-9D62-C89FB53E5B0B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsFormsApp_04_Condition_Enum_If_prac</RootNamespace>
+    <AssemblyName>WindowsFormsApp_04_Condition_Enum_If_prac</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,9 +31,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
