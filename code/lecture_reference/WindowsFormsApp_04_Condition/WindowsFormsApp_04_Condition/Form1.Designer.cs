@@ -33,6 +33,7 @@
             this.button_input = new System.Windows.Forms.Button();
             this.radioButton_true = new System.Windows.Forms.RadioButton();
             this.radioButton_false = new System.Windows.Forms.RadioButton();
+            this.textBox_print = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox_result
@@ -85,11 +86,20 @@
             this.radioButton_false.Text = "false";
             this.radioButton_false.UseVisualStyleBackColor = true;
             // 
+            // textBox_print
+            // 
+            this.textBox_print.Location = new System.Drawing.Point(155, 304);
+            this.textBox_print.Multiline = true;
+            this.textBox_print.Name = "textBox_print";
+            this.textBox_print.Size = new System.Drawing.Size(211, 50);
+            this.textBox_print.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 295);
+            this.ClientSize = new System.Drawing.Size(524, 366);
+            this.Controls.Add(this.textBox_print);
             this.Controls.Add(this.radioButton_false);
             this.Controls.Add(this.radioButton_true);
             this.Controls.Add(this.button_input);
@@ -109,6 +119,7 @@
         private System.Windows.Forms.Button button_input;
         private System.Windows.Forms.RadioButton radioButton_true;
         private System.Windows.Forms.RadioButton radioButton_false;
+        private System.Windows.Forms.TextBox textBox_print;
     }
 }
 

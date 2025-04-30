@@ -15,6 +15,7 @@ namespace WindowsFormsApp_05_Loop
         public Form1()
         {
             InitializeComponent();
+            //this.KeyPreview = true; // 키보드 입력을 감지하기 위해 필요한 옵션
 
             // #region?
             // ㄴ VS에서 특정 코드 블록을 접어서 숨기게 만들어주는 기능.
@@ -157,39 +158,80 @@ namespace WindowsFormsApp_05_Loop
         // #1. 가위, 바위, 보 버튼 3개 생성
         private void button_scissors_Click(object sender, EventArgs e)
         {
-
+            PlayRSPGame(RSP.scissors);
         }
 
         private void button_rock_Click(object sender, EventArgs e)
         {
-
+            PlayRSPGame(RSP.rock);
         }
 
         private void button_paper_Click(object sender, EventArgs e)
         {
-
+            PlayRSPGame(RSP.paper);
         }
 
         enum RSP
         { 
             rock,       // 0
             scissors,   // 1
-            parer       // 2
+            paper       // 2
         }
         RSP userRSP;
+
+        int user_score = 0;
+        int com_score = 0;
 
         // 모든 게임 로직을 관리하는 함수
         void PlayRSPGame(RSP user)
         {
-            
+            if (RSPGame(user))
+            {
+                textBox_result2.Text = "용사의 승리!\r\n";
+                this.user_score++;
+                textBox_userScore.Text = this.user_score.ToString();
+
+                if (this.user_score >= 3)
+                {
+                    textBox_result2.Text += "용사가 마왕을 무찔렀다~!\r\n(∩^o^)⊃━☆";
+                    this.user_score = this.com_score = 0;
+                }
+            }
+            else
+            {
+                textBox_result2.Text = "마왕의 승리..! 으아아 분하다!!\r\n";
+                this.com_score++;
+                textBox_comScore.Text = this.com_score.ToString();
+
+                if (this.com_score >= 3)
+                {
+                    textBox_result2.Text += "마왕이 우주를 정복했다...!\r\n(;´༎ຶД༎ຶ`)";
+                    this.user_score = this.com_score = 0;
+                }
+            }
+           
         }
 
         bool RSPGame(RSP user)
         {
             RSP pick = (RSP)this.rand.Next(0, 3);
+
+            if (user == pick)
+            {
+                return true;
+            }
+            return false;
         }
 
-
+        // # 키다운 이벤트!
+        //private void Form1_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyCode == Keys.Enter)
+        //    {
+        //        button_input.PerformClick();
+        //    }
+        //}
         #endregion
+
     }
 }
