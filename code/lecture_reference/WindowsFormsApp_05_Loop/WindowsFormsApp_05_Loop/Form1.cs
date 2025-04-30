@@ -17,9 +17,7 @@ namespace WindowsFormsApp_05_Loop
             InitializeComponent();
             //this.KeyPreview = true; // 키보드 입력을 감지하기 위해 필요한 옵션
 
-            // #region?
-            // ㄴ VS에서 특정 코드 블록을 접어서 숨기게 만들어주는 기능.
-            #region 반복문 강의 
+            #region #1. 반복문 강의 
             // Ex1)
             string message = "";
             for (int i = 0; i < 10; i++)
@@ -36,9 +34,9 @@ namespace WindowsFormsApp_05_Loop
                 loopCount[i] = i; // index로 i를 사용
             }
             textBox_result.Text = loopCount[loopCount.Length - 1].ToString();
+            #endregion
 
-            
-
+            #region #2. while문 강의
             int count = 0;
             while (count < 100)
             {
@@ -102,9 +100,13 @@ namespace WindowsFormsApp_05_Loop
 
             #endregion
 
+            // #2-2 while문 실습
+            //textBox_userScore.Text = "0";
+            //textBox_comScore.Text = "0";
+            ResetGame();
+            textBox_result2.Text = "게임을 시작해보세요!";
         }
-        #region For문 실습 문제
-
+        #region #1-2. 실습) For문
 
         // 학생 수 입력 (클릭)
         private void button1_Click(object sender, EventArgs e)
@@ -152,7 +154,7 @@ namespace WindowsFormsApp_05_Loop
 
         #endregion
 
-        #region While문 실습 문제
+        #region #2-2. 실습) While문
 
         Random rand = new Random();
         // #1. 가위, 바위, 보 버튼 3개 생성
@@ -178,50 +180,157 @@ namespace WindowsFormsApp_05_Loop
             paper       // 2
         }
         RSP userRSP;
+        RSP comRSP;
+        //
+
+        #region +추가) 무승부 (3가지 확률) Enum
+        // 비겼을 때를 생각해서 경우의 수 3가지 형태로 인해 Enum 추가
+        // 게임 결과
+        enum GameResult
+        {
+            Win,
+            Lose,
+            Draw
+        }
+        #endregion
 
         int user_score = 0;
         int com_score = 0;
 
         // 모든 게임 로직을 관리하는 함수
-        void PlayRSPGame(RSP user)
-        {
-            if (RSPGame(user))
-            {
-                textBox_result2.Text = "용사의 승리!\r\n";
-                this.user_score++;
-                textBox_userScore.Text = this.user_score.ToString();
+        //void PlayRSPGame(RSP user)
+        //{
+        //    if (RSPGame(user))
+        //    {
+        //        textBox_result2.Text += "용사의 승리!\r\n";
+        //        user_score++;
+        //        textBox_userScore.Text = user_score.ToString();
 
-                if (this.user_score >= 3)
-                {
-                    textBox_result2.Text += "용사가 마왕을 무찔렀다~!\r\n(∩^o^)⊃━☆";
-                    this.user_score = this.com_score = 0;
-                }
-            }
-            else
-            {
-                textBox_result2.Text = "마왕의 승리..! 으아아 분하다!!\r\n";
-                this.com_score++;
-                textBox_comScore.Text = this.com_score.ToString();
+        //        if (user_score >= 3)
+        //        {
+        //            textBox_result2.Text += "용사가 마왕을 무찔렀다~!\r\n(∩^o^)⊃━☆";
+        //            //this.user_score = this.com_score = 0; // 0으로 바꿈.
 
-                if (this.com_score >= 3)
-                {
-                    textBox_result2.Text += "마왕이 우주를 정복했다...!\r\n(;´༎ຶД༎ຶ`)";
-                    this.user_score = this.com_score = 0;
-                }
-            }
+        //             ResetGame(); // 초기화 함수 호출
+        //        }
+        //    }
+        //    else
+        //    {
+        //        textBox_result2.Text += "마왕의 승리..! 으아아 분하다!!\r\n";
+        //        com_score++;
+        //        textBox_comScore.Text = com_score.ToString();
+
+        //        if (com_score >= 3)
+        //        {
+        //            textBox_result2.Text += "마왕이 우주를 정복했다...!\r\n(;´༎ຶД༎ຶ`)";
+        //            //this.user_score = this.com_score = 0;
+        //             ResetGame(); // 초기화 함수 호출
+        //        }
+        //    }
            
+        //}
+        // 가위바위보 승패 판단 로직.
+        //bool RSPGame(RSP user)
+        //{
+        //    // 컴퓨터의 선택.
+        //    RSP pick = (RSP)rand.Next(0, 3);
+
+        //    textBox_result2.Text = $"마왕의 선택: {pick}\r\n";
+
+        //    // 무승부일 경우,
+        //    if (user == pick)
+        //    {
+        //        textBox_result2.Text += "비겼습니다!\r\n";
+        //        return false; // 승리도 패배도 아님
+        //    }
+        //    // 사용자 승리 조건
+        //    if (
+        //        (user == RSP.scissors && pick == RSP.paper) ||
+        //        (user == RSP.rock && pick == RSP.scissors) ||
+        //        (user == RSP.paper && pick == RSP.rock)
+        //        )
+        //    {
+        //        return true;
+        //    }
+        //    // 나머지는 패배. (= 마왕 승리)
+        //    return false;
+        //}
+        // 초기화 함수
+        void ResetGame()
+        {
+            user_score = 0;
+            com_score = 0;
+            textBox_userScore.Text = "0";
+            textBox_comScore.Text = "0";
         }
 
-        bool RSPGame(RSP user)
+        #region +추가) 무승부를 비김 (enum 추가) 후 RSPGame 승패 판단 로직
+        // 가위바위보 승패 판단 로직.
+        
+        GameResult RSPGame(RSP user)
         {
+            // 컴퓨터의 선택.
             RSP pick = (RSP)this.rand.Next(0, 3);
 
+            textBox_result2.Text = $"마왕의 선택: {pick}\r\n";
+
+            // 무승부일 경우,
             if (user == pick)
             {
-                return true;
+                return GameResult.Draw; // 승리도 패배도 아님
             }
-            return false;
+            // 사용자 승리 조건
+            if (
+                (user == RSP.scissors && pick == RSP.paper) ||
+                (user == RSP.rock && pick == RSP.scissors) ||
+                (user == RSP.paper && pick == RSP.rock)
+                )
+            {
+                return GameResult.Win;
+            }
+            // 나머지는 패배. (= 마왕 승리)
+            return GameResult.Lose;
         }
+        #endregion
+
+        #region +추가) 무승부를 비김 (enum 추가) 후 PlayRSPGame 전체 게임 로직 
+        
+        void PlayRSPGame(RSP user)
+        {
+            GameResult result = RSPGame(user);
+
+            if (result == GameResult.Draw)
+            {
+                textBox_result2.Text += "비겼습니다!\r\n";
+                return;
+            }
+
+            if (result == GameResult.Win)
+            {
+                textBox_result2.Text += "용사의 승리!\r\n";
+                user_score++;
+                textBox_userScore.Text = user_score.ToString();
+
+                if (user_score >= 3)
+                {
+                    textBox_result2.Text += "용사가 마왕을 무찔렀다~!\r\n(∩^o^)⊃━☆\r\n";
+                    ResetGame();
+                }
+            }
+            else // 마왕 승리
+            {
+                textBox_result2.Text += "마왕의 승리..! 으아아 분하다!!\r\n";
+                com_score++;
+                textBox_comScore.Text = com_score.ToString();
+
+                if (com_score >= 3)
+                {
+                    textBox_result2.Text += "마왕이 우주를 정복했다...!\r\n(;´༎ຶД༎ຶ`)\r\n";
+                    ResetGame();
+                }
+            }
+        }
+        #endregion
 
         // # 키다운 이벤트!
         //private void Form1_KeyDown(object sender, KeyEventArgs e)
