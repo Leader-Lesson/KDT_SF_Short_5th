@@ -17,10 +17,10 @@ namespace WindowsFormsApp_04_Condition_Enum_If_prac
         {
             InitializeComponent();
             //this.KeyPreview = true; // 키보드 입력을 감지하기 위해 필요한 옵션
-            FileName myfunc = new FileName();
-            int result = myfunc.Sum(100, 300);
+            //FileName myfunc = new FileName();
+            //int result = myfunc.Sum(100, 300);
 
-            double value = myfunc.d_value;
+            //double value = myfunc.d_value;
 
             // #1. 폼 기본 세팅.
             ResetGame();

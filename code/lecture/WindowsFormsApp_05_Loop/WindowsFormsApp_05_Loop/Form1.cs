@@ -276,6 +276,98 @@ namespace WindowsFormsApp_05_Loop
 
             #endregion
             #endregion
+
+            #region #3. while문 강의
+            /*
+             * - 조건이 "참(ture)"일 동안 계속해서 반복하는 반복문.
+             * ㄴ 조건이 "거짓(false)가 될 때까지 무한 반복 가능
+             * 
+             * 구조 
+             * while (조건식)
+             * {
+             *      조건이 true일 때 실행할 코드
+             * }
+             */
+
+            Console.Clear();
+
+            // Ex1) 0 ~ 99 출력
+            int count2 = 0;
+            while (count2 < 100)
+            {
+                // 반복할 소스코드
+                Console.WriteLine(count2);
+                count2++;
+            }
+
+            Console.WriteLine("-----------------");
+
+            // Ex2) 1 ~ 5 출력
+            int a = 1;
+
+            while (a <= 5)
+            {
+                Console.WriteLine(a);
+                a++; // 증감을 안하면 무한 루프 발생!
+            }
+
+            // Ex3) 무한 루프
+            /*
+            bool run = true;
+            while (run)
+            {
+                // 반복할 소스코드
+                Console.WriteLine("무한");
+            }
+            */
+
+            Console.WriteLine("-----------------");
+            // Ex4) 무한 루프2 (의도적으로 벗어나기)
+            int idx = 0;
+            while (true)
+            {
+                idx += 2;
+                if (idx == 10)
+                {
+                    break; 
+                }
+                Console.WriteLine($"{idx}");
+            }
+            Console.WriteLine($"{idx}");
+            Console.WriteLine("-----------------");
+            #endregion
+
+            #region #4. break & continue
+            // # break & continue
+            // - 반복문에서 사용되는 제어문.
+
+            // # break
+            // - 반복문을 완전히 중단하고 빠져나옴.
+            for (int i = 0; i < 10; i++)
+            {
+                if (i == 5)
+                {
+                    break;
+                }
+                Console.WriteLine($"{i}");
+            }
+            // 출력 결과 : 0, 1, 2, 3, 4
+            Console.WriteLine("-----------------");
+
+            // # continue
+            // - 현재 반복을 중지하고 다음 반복으로 넘어감.
+            // ㄴ = 이번 회차 건너뛰기.
+
+            for (int i = 0; i < 10; i++)
+            {
+                if (i == 5) // 5만 건너뜀!
+                {
+                    continue;
+                }
+                Console.WriteLine($"{i}");
+            }
+            // 출력 결과 : 0, 1, 2, 3, 4, 6, 7, 8, 9
+            #endregion
         }
 
         #region #1-2. 실습) For문
