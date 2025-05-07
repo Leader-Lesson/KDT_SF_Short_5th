@@ -78,16 +78,43 @@ namespace WindowsFormsApp_06_Struct
             }
             #endregion
 
-            #region #4. 람다식 표현 함수
+            #region #4. 표현식 본문 (화살표 함수)
+            // 한 줄만 가능.
+            // 여러 줄이면 반드시 블록 본문으로 작성 해야 함.
 
+            this.button1.Click += new System.EventHandler(button1_Click);
 
-            // 람다식 사용 -> 한 줄로 표현
-            this.button1.Click += new System.EventHandler
+            // 표현식 사용 -> 한 줄로 표현
+            this.button1.Click += (sender, e) => ((Button)sender).BackColor = Color.Red;
+
+            Hi();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             ((Button)sender).BackColor = Color.Red;
         }
+
+        // 일반 함수 선언문
+        int Add(int a, int b)
+        {
+            return a + b;
+        }
+
+        // 표현식 함수 선언문 (한 줄 선언)
+        int Add2(int a, int b) => a + b;
+
+        void Hi() => Console.WriteLine("표현식");
+       
+
+        /*
+         * (참고) - 람다식 설명
+         * 여러 줄 선언은 원래 하던대로 일반함수 처럼 (델리게이트 없이)
+         * => 자체는 "값(데이터)"라서 변수에 담거나 전달할 때만 쓸 수 있음.
+         * 람다식(=>)은 이름 없는 함수 (무명 함수) 이기 때문에, 누군가 받아줘야 쓸 수 있다.
+         * 그게 바로 델리게이트, (Func<>, Action<>)임.
+         * 그래서 델리게이트 없이는 독립적으로 람다식을 선언해서 사용할 수 없음.
+         */
+        #endregion
     }
 }
