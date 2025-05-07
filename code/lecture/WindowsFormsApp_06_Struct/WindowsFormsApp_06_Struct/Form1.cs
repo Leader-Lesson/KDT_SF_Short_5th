@@ -80,7 +80,9 @@ namespace WindowsFormsApp_06_Struct
 
             #region #4. 람다식 표현 함수
 
-            #endregion
+
+            // 람다식 사용 -> 한 줄로 표현
+            this.button1.Click += new System.EventHandler
         }
 
         private void button1_Click(object sender, EventArgs e)
