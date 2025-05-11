@@ -38,6 +38,8 @@ namespace WindowsFormsApp_06_Struct
         }
     }
     #endregion
+
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -74,7 +76,7 @@ namespace WindowsFormsApp_06_Struct
                 p[i].y = i * i;
                 p[i].z = -i;
 
-                Console.WriteLine($"point[{i}] ({p[i].x}, {p[i].y}, {p[i].z})");
+                Console.WriteLine($"/point[{i}] ({p[i].x}, {p[i].y}, {p[i].z})");
             }
             #endregion
 
