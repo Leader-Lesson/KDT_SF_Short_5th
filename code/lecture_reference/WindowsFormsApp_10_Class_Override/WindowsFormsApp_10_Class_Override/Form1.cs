@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp_10_Class_Override
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+
+            Console.WriteLine("=== 오버로드 예시 ===");
+            Beverage basic = new Beverage();
+            basic.Order();                           // 기본 주문
+            basic.Order("콜드브루");                 // 이름만 주문
+            basic.Order("콜드브루", "Grande");        // 이름 + 사이즈 주문
+
+            Console.WriteLine("\n=== 오버라이드 예시 ===");
+            Beverage americano = new Americano();
+            americano.Prepare();                     // 오버라이드된 메서드 호출
+
+            Console.WriteLine("\n=== sealed 예시 ===");
+            Beverage latte = new Latte();
+            latte.Prepare();                     // 더 이상 오버라이드 불가능한 메서드
+        }
+    }
+}
