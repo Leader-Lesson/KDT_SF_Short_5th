@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{80F0BC22-50AB-4AB0-AEB7-6F6D2F244307}</ProjectGuid>
+    <ProjectGuid>{17D3B290-D515-4772-85A6-1C98C1CD547A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>WindowsFormsApp_13_Exception</RootNamespace>
-    <AssemblyName>WindowsFormsApp_13_Exception</AssemblyName>
+    <RootNamespace>WindowsFormsApp_12_Ref</RootNamespace>
+    <AssemblyName>WindowsFormsApp_12_Ref</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -78,9 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="file.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -91,6 +91,53 @@ namespace WindowsFormsApp_13_Exception
                 Console.WriteLine("프로그램을 종료합니다. 감사합니다.");
                 Console.ReadLine();
             }
+
+            try
+            {
+                // 1. 사용자로부터 닉네임 입력 받기
+                Console.Write("닉네임을 입력하세요: ");
+                string nickname = Console.ReadLine();
+
+                // 2. 예외 조건 검사 및 예외 발생
+
+                // (1) 비어있는 경우
+                if (string.IsNullOrWhiteSpace(nickname))
+                {
+                    // 다음 셋 중 하나에 해당하는 경우 true를 반환
+                    // null인 경우
+                    // 빈 문자열("")인 경우
+                    // 공백 문자만 포함된 문자열인 경우 (예: " ")
+                    throw new Exception("닉네임을 입력해주세요.");
+
+                }
+
+                // (2) 길이가 2글자 미만인 경우
+                if (nickname.Length < 2)
+                {
+                    throw new Exception("닉네임은 2글자 이상이어야 합니다.");
+                }
+
+                // (3) 'admin'이 포함된 경우
+                if (nickname.ToLower().Contains("admin"))
+                {
+                    throw new Exception("닉네임에 'admin'은 포함할 수 없습니다.");
+                }
+
+                // 3. 모든 조건을 통과하면 성공 메시지 출력
+                Console.WriteLine("닉네임 등록 완료!");
+            }
+            catch (Exception ex)
+            {
+                // 4. 예외 발생 시 사용자에게 메시지 출력
+                Console.WriteLine($"❗ {ex.Message}");
+            }
+            finally
+            {
+                // 5. 예외 여부와 관계없이 항상 출력
+                Console.WriteLine("프로그램을 종료합니다.");
+            }
+
+            Console.ReadLine(); // 콘솔 창 유지
         }
 
         /*
