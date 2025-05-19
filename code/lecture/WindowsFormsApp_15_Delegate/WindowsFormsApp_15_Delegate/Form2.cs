@@ -57,7 +57,13 @@ namespace WindowsFormsApp_15_Delegate
             // 우리가 Product 클래스에서 override한 ToString()이 실행됨
 
             // 카테고리가 '가구'인 제품만
+            List<Product> furniture = ProductFilter.Filter(items, p => p.Category == "가구");
 
+            Console.WriteLine("\n[가구 카테고리 제품]");
+            foreach (var item in furniture)
+            {
+                Console.WriteLine($"- {item}");
+            }
         }
     }
 }

@@ -71,7 +71,7 @@ namespace WindowsFormsApp_17_Thread
             // 공유 데이터 접근 - 경쟁 조건 발생 가능
             // 👉 필요 시 아래 주석 해제하여 동기화 실습 가능
             // #5-1. 
-            lock (lockObject)
+            //lock (lockObject)
             {
                 for (int i = 0; i < 10; i++)
                 {
@@ -114,7 +114,7 @@ namespace WindowsFormsApp_17_Thread
         private void UpdateData2()
         {
             // #5-2.
-            lock (lockObject) // 경쟁 조건 방지용 (필요 시 사용)
+            //lock (lockObject) // 경쟁 조건 방지용 (필요 시 사용)
             {
                 for (int i = 0; i < 10; i++)
                 {

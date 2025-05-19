@@ -16,7 +16,7 @@ namespace WindowsFormsApp_15_Delegate
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form2()); // << 이것 수정할 것.
+            Application.Run(new Form3()); // << 이것 수정할 것.
         }
     }
 }

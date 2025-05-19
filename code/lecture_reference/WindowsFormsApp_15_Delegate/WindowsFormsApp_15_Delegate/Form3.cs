@@ -24,9 +24,20 @@ namespace WindowsFormsApp_15_Delegate
             Console.WriteLine("알람 울림");
         }
 
+        // ## 1. 사용자 정의 이벤트 선언
+        public event EventHandler MyEvent;
+
         public Form3()
         {
             InitializeComponent();
+
+            // ## 2. 이벤트 핸들러 등록
+            MyEvent += ShowConsoleMessage;
+            MyEvent += ShowPopup;
+
+            // ## 3. 버튼 클릭 시 이벤트 실행
+            btnTrigger.Click += BtnTrigger_Click;
+
 
             Alarm alarm = new Alarm();
 
@@ -45,6 +56,26 @@ namespace WindowsFormsApp_15_Delegate
             alarm2.Trigger();   // 클래스 내부 메서드만 가능 -> 안전함.
         }
 
+        // [4] 이벤트를 발생시키는 트리거 메서드
+        private void BtnTrigger_Click(object sender, EventArgs e)
+        {
+            // [5] 이벤트 발생 - 반드시 null 체크
+            MyEvent?.Invoke(this, EventArgs.Empty);
+        }
+
+        // [6] 콘솔 출력용 핸들러
+        private void ShowConsoleMessage(object sender, EventArgs e)
+        {
+            Console.WriteLine("[이벤트 발생] 콘솔 메시지 출력!");
+        }
+
+        // [7] 메시지박스 출력용 핸들러
+        private void ShowPopup(object sender, EventArgs e)
+        {
+            MessageBox.Show("이벤트가 발생했습니다!", "알림");
+        }
+
+
         // # 이벤트 메서드
         /*
          * VS가 자동으로 "delegate 형식(EventHandler delegate)"에 맞춰서 만들어준 이벤트 핸들러 메서드.
@@ -53,6 +84,7 @@ namespace WindowsFormsApp_15_Delegate
         {
 
         }
+
 
         /*
          * // Button 클래스 내부
@@ -84,7 +116,7 @@ namespace WindowsFormsApp_15_Delegate
     // event
     public class Alarm2
     {
-        public event Notify OnRing;
+        public event Notify2 OnRing;    
 
         public void Trigger()
         {

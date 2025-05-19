@@ -64,7 +64,6 @@ namespace WindowsFormsApp_16_BackgroundWorker
            
         }
 
-       
 
         // #5. 시작 버튼 클릭 → 작업 시작
         private void btnStart_Click(object sender, EventArgs e)
