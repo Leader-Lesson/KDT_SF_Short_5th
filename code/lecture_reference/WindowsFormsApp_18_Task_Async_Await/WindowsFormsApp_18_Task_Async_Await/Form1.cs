@@ -94,7 +94,7 @@ namespace WindowsFormsApp_18_Task_Async_Await
             Thread.Sleep(3000);  // CPU를 점유하는 방식 (UI에서 직접 사용 금지!)
         }
 
-        // #3. Task.Delay: 스레드를 점유하지 않고 일정 시간 대기 (비동기 대기)
+        // [3]. Task.Delay: 스레드를 점유하지 않고 일정 시간 대기 (비동기 대기)
         private async void button2_Click(object sender, EventArgs e)
         {
             label1.Text = "3초 대기 중...";
@@ -108,7 +108,7 @@ namespace WindowsFormsApp_18_Task_Async_Await
             label1.Text = "3초 대기 완료!";
         }
 
-        // #4. Task.FromResult: 이미 계산된 결과를 Task로 감싸서 반환할 때 사용
+        // [4]. Task.FromResult: 이미 계산된 결과를 Task로 감싸서 반환할 때 사용
         private async void button3_Click(object sender, EventArgs e)
         {
             // Task.FromResult
@@ -121,7 +121,7 @@ namespace WindowsFormsApp_18_Task_Async_Await
             label1.Text = $"결과: {result}";
         }
 
-        // #5. Task.WhenAll: 여러 Task를 동시에 실행하고, 모두 끝날 때까지 기다림
+        // [5]. Task.WhenAll: 여러 Task를 동시에 실행하고, 모두 끝날 때까지 기다림
         private async void button4_Click(object sender, EventArgs e)
         {
             label1.Text = "모든 작업 시작...";
