@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{44D02487-74B7-4D3F-B5B1-CCF8383E5FE3}</ProjectGuid>
+    <ProjectGuid>{CF465AC5-2130-4651-9C05-5FA6B6001541}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsApp_17_Thread</RootNamespace>
-    <AssemblyName>WindowsFormsApp_17_Thread</AssemblyName>
+    <RootNamespace>WindowsFormsApp_18_Task_Async_Await</RootNamespace>
+    <AssemblyName>WindowsFormsApp_18_Task_Async_Await</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
