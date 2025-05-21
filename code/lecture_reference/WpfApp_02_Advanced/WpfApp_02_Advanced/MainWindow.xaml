@@ -1,0 +1,58 @@
+﻿<Window x:Class="WpfApp_02_Advanced.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_02_Advanced"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Resource">
+                <!-- #1. Resource XAML 버전 -->
+                <!--<Image Source="/Assets/test.png"/>-->
+        
+                <!-- #2. Resource C# 버전 -->
+                <StackPanel>
+                    <Image x:Name="imgTest" Width="200" Height="200"/>
+                    <Button Content="다른 이미지 보기(Resource)" Click="Button_Click" />
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Content">
+                <!-- #3. Content XAML 버전 -->
+                <StackPanel>
+                    <Image x:Name="imgTest2" Width="200" Height="200"/>
+                    <Button Content="다른 이미지 보기(Content)" Click="Btn_Content_Click"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="pack URI">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image x:Name="imgDisplay" Width="200" Height="200" Margin="0,10"/>
+                    <Button Content="이미지 바꾸기" Click="BtnChangeImage_Click" Width="150" Height="40"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="DataGrid">
+                <Grid>
+                    <!-- 컬럼 자동 생성-->
+                    <DataGrid x:Name="dataGrid"
+                  AutoGenerateColumns="True"
+                  CanUserAddRows="False"
+                  IsReadOnly="True"
+                  Margin="10"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="DataGrid2">
+                <Grid>
+                    <!-- 컬럼 수동 생성-->
+                    <DataGrid x:Name="studentGrid" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="이름" Binding="{Binding Name}" Width="150" />
+                            <DataGridTextColumn Header="학년" Binding="{Binding Grade}" Width="100" />
+                            <DataGridCheckBoxColumn Header="출석 여부" Binding="{Binding IsPresent}" Width="120" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
