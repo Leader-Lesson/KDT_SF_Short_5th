@@ -32,6 +32,14 @@ namespace WpfApp_01_Base
             // [3] ListBox에 데이터 바인딩
             // - ListBox는 animals 리스트의 항목 개수만큼 줄을 만들어 화면에 표시하게 됨
             listBox.ItemsSource = animals;
+
+
+            // #11. web
+            WebBrowser1.Navigate("http://www.naver.com");
+            //WebBrowser1.GoBack();     // 뒤로가기
+            //WebBrowser1.GoForward();  // 앞으로가기
+
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -173,6 +181,26 @@ namespace WpfApp_01_Base
             public int Percent { get; set; }
         }
 
+        // #11. Web
+        // ▶ [1] 네이버로 이동 버튼
+        private void btnNaver_Click(object sender, EventArgs e)
+        {
+            WebBrowser1.Navigate("https://www.naver.com");
+        }
+
+        // ▶ [2] 뒤로 가기 버튼
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            if (WebBrowser1.CanGoBack)
+                WebBrowser1.GoBack();
+        }
+
+        // ▶ [3] 앞으로 가기 버튼
+        private void btnForward_Click(object sender, EventArgs e)
+        {
+            if (WebBrowser1.CanGoForward)
+                WebBrowser1.GoForward();
+        }
     }
 
 
@@ -304,7 +332,7 @@ namespace WpfApp_01_Base
      * - 여러 개의 항목들을 목록 형태로 나열해 보여주고,
      *   사용자가 항목을 하나 이상 선택할 수 있도록 해주는 컨트롤.
      * - Combobox: 펼쳐지는 드롭다운 (공간 절약)
-     * - ListBOx: 펼쳐진 채로 보임 (한눈에 보기 좋음)
+     * - ListBox: 펼쳐진 채로 보임 (한눈에 보기 좋음)
      * 
      * [속성]
      * - Items : 항목을 직접 추가할 수 있음.
@@ -335,6 +363,7 @@ namespace WpfApp_01_Base
      *   
      * 4) {Binding Name} ?
      * - 바인딩된 데이터의 Name 속성 값을 UI에 표시.
+     * 
      * 5) {Binding Percent} ?
      * - 바인딩된 데이터의 Percent 값을 꺼내서 ProgressBar의 Value로 넣는 것
      *   
@@ -347,6 +376,24 @@ namespace WpfApp_01_Base
 
        그래서 XAML에서는 직접 ListBoxItem을 나열하지 않고,
        ItemTemplate을 통해 자동으로 항목을 그리도록 만들어야 유지보수와 재사용에 좋습니다.
+     */
+    #endregion
+
+    #region #11. Web Browser
+    /*
+     * - WPF에서 제공하는 웹 페이지를 보여주는 컨트롤
+     * - Internet Explorer(IE)의 웹 엔진을 기반 (2022년 이후로 지원 중지)
+     * 
+     * - Edge 기반 WebView2를 사용하는 것이 더 좋습니다
+     * 
+     * Why?
+     * - 프로그램 안에서 웹 페이지를 보여주고 싶을 때
+     * 
+     * [속성]
+     * - Navigate(string url): 지정한 웹 주소로 이동
+     * - GoBack(): 뒤로 이동
+     * - GoForward(): 앞으로 이동
+     * - Refresh(): 현재 페이지 새로고침
      */
     #endregion
 }

@@ -142,8 +142,8 @@
                         <ListBoxItem Content="초록"/>
                         <ListBoxItem Content="파랑"/>
                     </ListBox>
-                    <!--이벤트 뒤 코드-->
                     <TextBlock x:Name="textSelected" FontSize="16" Margin="10"/>
+                    <!--이벤트 뒤 코드-->
                     <ListBox x:Name="listFruits"
 SelectionMode="Multiple"
 SelectionChanged="listFruits_SelectionChanged"
@@ -179,6 +179,14 @@ Height="100" Width="200">
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
+            </TabItem>
+            <TabItem Header="Web">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10" HorizontalAlignment="Left">
+                <WebBrowser x:Name="WebBrowser1" />
+                    <Button x:Name="btnNaver" Content="네이버로 이동" Width="100" Margin="0,0,10,0" Click="btnNaver_Click"/>
+                    <Button x:Name="btnBack" Content="뒤로가기" Width="80" Margin="0,0,10,0" Click="btnBack_Click"/>
+                    <Button x:Name="btnForward" Content="앞으로가기" Width="90" Click="btnForward_Click"/>
+                </StackPanel>
             </TabItem>
         </TabControl>
         
