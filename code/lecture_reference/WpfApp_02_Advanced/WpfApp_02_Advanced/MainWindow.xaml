@@ -108,6 +108,7 @@
                     <StackPanel Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
                         <Button Content="다중 선택 항목 정보" Margin="5" Click="ShowMultiSelectedItems_Click"/>
                     </StackPanel>
+                    
                 </Grid>
             </TabItem>
         </TabControl>
