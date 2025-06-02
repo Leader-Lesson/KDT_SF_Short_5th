@@ -1,0 +1,43 @@
+﻿<Window x:Class="WpfApp_04_DesignPattern.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:WpfApp_04_DesignPattern.ViewModels"
+        xmlns:local="clr-namespace:WpfApp_04_DesignPattern"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <!-- [3-1] ViewModel 인스턴스를 DataContext로 연결 -->
+    <Window.DataContext>
+        <vm:TodoViewModel/>
+        <!-- xmlns: vm 작성하기-->
+        <!-- ViewModel 객체 생성 및 연결 -->
+    </Window.DataContext>
+    <Grid>
+        <!--
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="txtCount" Text="카운트: 0" FontSize="26" TextAlignment="Center"
+                       HorizontalAlignment="Center"/>
+            <Button Content="카운트 증가" Width="150" Height="40" Margin="20" Click="Button_Click" />
+        </StackPanel>
+        -->
+        <StackPanel Margin="10">
+            <!-- [3-2] TextBox 입력값을 NewTask 속성과 바인딩 -->
+            <TextBox Text="{Binding NewTask, UpdateSourceTrigger=PropertyChanged}" 
+                     FontSize="26" Margin="0,0,0,10"/>
+                    <!-- ㄴ 텍스트 입력이 바뀌는 즉시 ViewModel에 값을 반영하는 설정 -->
+                    <!-- TextBox <-> ViewModel 간 실시간 연동 시 거의 필수로 사용.-->
+            
+            <!-- [3-3] 버튼: 각각 따로 이벤트 메서드랑 바인딩 -->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Button Content="추가" Command="{Binding AddTaskCommand}" Width="80" Margin="0,0,10,0"/>
+                <Button Content="삭제" Command="{Binding RemoveTaskCommand}" Width="80"/>
+            </StackPanel>
+            
+            <!-- [3-4] 할 일 목록을 ListBox에 바인딩 -->
+            <ListBox ItemsSource="{Binding TodoItems}" 
+                     SelectedItem="{Binding SelectedItem}" 
+                     Height="180" FontSize="16"/>
+        </StackPanel>
+    </Grid>
+</Window>
