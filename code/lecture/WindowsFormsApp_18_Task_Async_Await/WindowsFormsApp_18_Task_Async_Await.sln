@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35919.96 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp_18_Task_Async_Await", "WindowsFormsApp_18_Task_Async_Await\WindowsFormsApp_18_Task_Async_Await.csproj", "{CF465AC5-2130-4651-9C05-5FA6B6001541}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp_18_Task_Async_Await", "WindowsFormsApp_18_Task_Async_Await\WindowsFormsApp_18_Task_Async_Await.csproj", "{FB220E24-1AC8-40F1-A521-259A4CA02B0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CF465AC5-2130-4651-9C05-5FA6B6001541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF465AC5-2130-4651-9C05-5FA6B6001541}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CF465AC5-2130-4651-9C05-5FA6B6001541}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CF465AC5-2130-4651-9C05-5FA6B6001541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB220E24-1AC8-40F1-A521-259A4CA02B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB220E24-1AC8-40F1-A521-259A4CA02B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB220E24-1AC8-40F1-A521-259A4CA02B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB220E24-1AC8-40F1-A521-259A4CA02B0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {BEA804B1-771E-4A18-9EF0-930290D2046A}
+		SolutionGuid = {3D21AB80-07D0-468B-BD1E-9EF593019647}
 	EndGlobalSection
 EndGlobal

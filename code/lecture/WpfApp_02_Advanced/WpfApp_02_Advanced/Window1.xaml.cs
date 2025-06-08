@@ -1,7 +1,5 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace WpfApp_02_Advanced
 {
@@ -26,62 +25,28 @@ namespace WpfApp_02_Advanced
             InitializeComponent();
         }
 
-        public class Person
+        private void btnImage_Click(object sender, RoutedEventArgs e)
         {
-            public string 이름 { get; set; }
-            public int 나이 { get; set; }
-            public string 설명 { get; set; }
+            // [1] 파일 다이얼로그 열기
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "이미지 파일 (*.png; *.jpg; *.jpeg)|*.png;*.jpg;*.jpeg";
 
-        }
-        private void btnOpen_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "CSV 파일 (*.csv)|*.csv";
-
-            if (ofd.ShowDialog() == true)
+            if (dialog.ShowDialog() == true)
             {
-                lblPath.Content = ofd.FileName;
-                List<Person> people = new List<Person>();
+                // [2] 이미지 경로를 URI로 가져오기
+                Uri imageUri = new Uri(dialog.FileName, UriKind.Absolute);
+                BitmapImage bitmap = new BitmapImage(imageUri);
 
-                try
-                {
-                    using (StreamReader reader = new StreamReader(ofd.FileName))
-                    {
-                        reader.ReadLine();
+                // [3] 버튼 배경 이미지 설정
+                ImageBrush brush = new ImageBrush(bitmap);
+                btnImage.Background = brush;
 
-                        while (!reader.EndOfStream)
-                        {
-                            string line = reader.ReadLine();
-                            var parts = line.Split(',');
+                // [4] 버튼 크기를 이미지 크기와 맞게 조정
+                btnImage.Width = bitmap.PixelWidth;
+                btnImage.Height = bitmap.PixelHeight;
 
-                            if (parts.Length < 3) continue;
-
-                            people.Add(new Person
-                            {
-                                이름 = parts[0],
-                                나이 = int.Parse(parts[1]),
-                                설명 = parts[2]
-                            });
-                        }
-                    }
-                    dataGrid.ItemsSource = people;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("파일 불러오는 도중 오류!" + ex.Message);
-                }
-            }
-        }
-
-        private void btnGetData_Click(object sender, RoutedEventArgs e)
-        {
-            if (dataGrid.SelectedItem is Person selected)
-            {
-                MessageBox.Show("선택된 이름: " + selected.이름);
-            }
-            else
-            {
-                MessageBox.Show("선택된 행 없음.");
+                // [5] 텍스트 제거 (선택사항)
+                btnImage.Content = null;
             }
         }
     }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp_08_Class_Inheritance.Properties
+namespace WindowsFormsApp_08_Class_inheritance.Properties
 {
 
 

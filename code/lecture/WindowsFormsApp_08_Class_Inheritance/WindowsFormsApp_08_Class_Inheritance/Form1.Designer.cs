@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp_08_Class_Inheritance
+﻿namespace WindowsFormsApp_08_Class_inheritance
 {
     partial class Form1
     {

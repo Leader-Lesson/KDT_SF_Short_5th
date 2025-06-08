@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BBA0CAAF-D738-4C59-8048-836A66D1CC0D}</ProjectGuid>
+    <ProjectGuid>{DA872BB8-BB09-4E05-8485-18E6723CD104}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>WindowsFormsApp_09_Class_UpCasting</RootNamespace>
     <AssemblyName>WindowsFormsApp_09_Class_UpCasting</AssemblyName>

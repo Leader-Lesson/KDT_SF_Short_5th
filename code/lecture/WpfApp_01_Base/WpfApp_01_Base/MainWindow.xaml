@@ -7,20 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <!-- Grid: 기본 UI 레이아웃 컨테이너 -->
-        <!-- #1. Tab Control -->
+        <!-- #1. Tab Control-->
         <TabControl>
             <!-- 첫 번째 탭 -->
             <TabItem Header="학생 정보">
                 <StackPanel Margin="10">
                     <TextBlock Text="이름: 홍길동"/>
-                    <TextBlock Text="나이: 28세"/>
+                    <TextBlock Text="나이: 20세"/>
                 </StackPanel>
             </TabItem>
-            <!-- 두 번쨰 탭 -->
+
+            <!-- 두 번째 탭 -->
             <TabItem Header="Grid">
                 <Grid>
-                    <!-- 행과 열 정보 미리 선언 -->
+                    <!--행과 열 정보 미리 선언-->
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
@@ -31,120 +31,164 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- 0행 0열 -->
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="이름 :" Margin="5"/>
-
-                    <!-- Grid.Row : 해당 요소가 위치할 행 번호 (0부터 시작) -->
-                    <!-- Grid.Column : 해당 요소가 위치할 열 번호 (0부터 시작) -->
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="이름:" Margin="5"/>
+                    <!--Grid.Row	- 해당 요소가 위치할 행 번호 (0부터 시작)-->
+                    <!--Grid.Column	- 해당 요소가 위치할 열 번호 (0부터 시작)-->
 
                     <!-- 0행 1열 -->
                     <TextBox Grid.Row="0" Grid.Column="1" Margin="5"/>
 
-                    <!-- 1행 0열부터 1열까지 합침-->
+                    <!-- 1행 0열부터 1열까지 합침 -->
                     <Button Grid.Row="1" Grid.ColumnSpan="2" Content="확인" Margin="5"/>
-                    <!-- Grid.RowSpan : 여러 행에 걸쳐 배치할 때 (행 병합)-->
-                    <!-- Grid.ColumnSpan : 여러 열에 걸쳐 배치할 때 (열 병합) -->
+                    <!--Grid.RowSpan	- 여러 행에 걸쳐 배치할 때-->
+                    <!--Grid.ColumnSpan	- 여러 열에 걸쳐 배치할 때-->
                 </Grid>
             </TabItem>
-            <!-- 세번째 탭 -->
-            <TabItem Header="그룹 박스">
-                <GroupBox Header="사용자 정보" Margin="10" >
+
+            <!-- 세 번째 탭 -->
+            <TabItem Header="기타">
+                <TextBlock Text="기타 정보 탭입니다." 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Center"/>
+            </TabItem>
+            <!-- 네 번째 탭 -->
+            <TabItem Header="그룹박스">
+
+                <GroupBox Header="사용자 정보" Margin="10">
                     <StackPanel Margin="10">
-                        <TextBlock Text="이름: "/>
-                        <TextBox Width="200"/>
-                        <TextBlock Text="나이: "/>
-                        <TextBox Width="200"/>
-
-                        <TextBlock Text="성별을 선택하세요: " FontSize="14" Margin="0, 0, 0, 10"/>
+                        <TextBlock Text="이름:" />
+                        <TextBox Width="200" />
+                        <TextBlock Text="나이:" />
+                        <TextBox Width="200" />
+                        <!-- 설명 텍스트 -->
+                        <TextBlock Text="성별을 선택하세요:" FontSize="14" Margin="0,0,0,10"/>
                         <!-- 라디오 버튼 그룹 -->
-                        <RadioButton x:Name="radioMale" Content="남성" GroupName="gender" IsChecked="True" Margin="0,0,0,5" Checked="radioMale_Checked"/>
+                        <RadioButton x:Name="radioMale"
+                     Content="남성"
+                     GroupName="gender"
+                     IsChecked="True"
+                     Checked="radioMale_Checked"
+                     Margin="0,0,0,5"/>
 
-                        <RadioButton x:Name="radioFemale" Content="여성" GroupName="gender" Margin="0,0,0,15" Checked="radioFemale_Checked"/>
 
+                        <RadioButton x:Name="radioFemale"
+                     Content="여성"
+                     GroupName="gender"
+                     Checked="radioFemale_Checked"
+                     Margin="0,0,0,15"/>
+
+                        <!-- 버튼 -->
                         <Button Content="확인" Click="Button_Click"/>
                     </StackPanel>
+                    <!--이벤트 뒤 코드 작성-->
                 </GroupBox>
             </TabItem>
-            <!-- 네번째 탭-->
             <TabItem Header="슬라이더">
                 <StackPanel Margin="20">
-                    <TextBlock Text="볼륨 조절 : " FontSize="14" Margin="0,0,0,10"/>
-                    <Slider Minimum="0" Maximum="100" Value="50"></Slider>
+                    <!-- 설명 텍스트 -->
+                    <TextBlock Text="볼륨 조절:" FontSize="14" Margin="0,0,0,10"/>
+                    <Slider Minimum="0" Maximum="100" Value="50"/>
                     <Slider Minimum="0" Maximum="100" TickFrequency="20" IsSnapToTickEnabled="True"/>
 
                     <StackPanel Margin="20">
                         <Slider x:Name="volumeSlider" Minimum="0" Maximum="100"
-                                Value="50" TickFrequency="10" IsSnapToTickEnabled="True"
-                                TickPlacement="BottomRight" Width="200" ValueChanged="volumeSlider_ValueChanged" Ticks="0, 30 , 50, 90"/>
-                        <TextBlock x:Name="volumeText" FontSize="20" Margin="10"/>
+            Value="50" TickFrequency="10" IsSnapToTickEnabled="True" TickPlacement="BottomRight" Ticks="0,20,55,90"
+            Width="200" ValueChanged="volumeSlider_ValueChanged"/>
+                        <TextBlock x:Name="volumeText" FontSize="16" Margin="10" />
                     </StackPanel>
+                    <!--이벤트 뒤 코드 작성-->
                 </StackPanel>
             </TabItem>
-            <!-- 다섯번째 탭 -->
-            <TabItem Header="체크박스">
+            <TabItem Header="그룹박스">
                 <StackPanel Margin="20">
-                    <CheckBox x:Name="checkBoxApple" Content="사과" Checked="checkBox_Checked" Unchecked="checkBox_Checked"/>
-                    <CheckBox x:Name="checkBoxBanana" Content="바나나" Checked="checkBox_Checked" Unchecked="checkBox_Checked"/>
-                    <CheckBox x:Name="checkBoxOrange" Content="오렌지" Checked="checkBox_Checked" Unchecked="checkBox_Checked"/>
-                    <TextBlock x:Name="textResult" FontSize="26" Margin="10"/>
-                    <CheckBox x:Name="checkBoxState" Content="중간 상태 체크박스" IsThreeState="True" Click="checkBoxState_Click" />
-                    <TextBlock x:Name="textStatus" FontSize="26" Margin="10"/>
+                    <CheckBox x:Name="checkBoxApple" Content="사과" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked"/>
+                    <CheckBox x:Name="checkBoxBanana" Content="바나나" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked"/>
+                    <CheckBox x:Name="checkBoxOrange" Content="오렌지" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked" />
+                    <TextBlock x:Name="textResult" FontSize="16" Margin="10"/>
+                    <CheckBox x:Name="checkBoxState"
+              Content="중간 상태 체크박스"
+              IsThreeState="True"
+              Click="checkBoxState_Click"/>
+
+                    <TextBlock x:Name="textStatus" FontSize="16" Margin="10"/>
                 </StackPanel>
+
+                <!--이벤트 뒤 코드 작성-->
             </TabItem>
-            <!-- 여섯번째 탭-->
             <TabItem Header="콤보박스">
                 <StackPanel Margin="20">
-                    <TextBlock Text="과일을 선택하세요: " FontSize="26" Margin="0, 0, 0, 5"/>
-                    <ComboBox x:Name="comboFruits" Width="400" Height="100" SelectionChanged="comboFruits_SelectionChanged" >
+                    <TextBlock Text="과일을 선택하세요:" FontSize="14" Margin="0,0,0,5"/>
+
+                    <ComboBox x:Name="comboFruits"
+              Width="200"
+              SelectionChanged="comboFruits_SelectionChanged">
                         <ComboBoxItem Content="사과" />
                         <ComboBoxItem Content="바나나" />
                         <ComboBoxItem Content="오렌지" />
                     </ComboBox>
-                    <TextBlock x:Name="textResult2" FontSize="26" Margin="10"/>
+                    <TextBlock x:Name="textResult2" FontSize="16" Margin="10"/>
+                    <!--사용자가 직접 입력 가능한 콤보 박스-->
+                    <ComboBox IsEditable="True" Width="200" />
                 </StackPanel>
             </TabItem>
-            <!-- 일곱번째 탭 -->
             <TabItem Header="리스트박스">
                 <StackPanel Margin="20">
-                    <TextBlock Text="좋아하는 색상을 선택하세요: " FontSize="26" Margin="0, 0, 0 ,5"/>
-                    <ListBox x:Name="listColors" Height="100" Width="200" SelectionChanged="listColors_SelectionChanged" >
+                    <TextBlock Text="좋아하는 색상을 선택하세요:" FontSize="14" Margin="0,0,0,5"/>
+
+                    <ListBox x:Name="listColors"
+             SelectionChanged="listColors_SelectionChanged"
+             Height="100" Width="200">
                         <ListBoxItem Content="빨강"/>
                         <ListBoxItem Content="초록"/>
                         <ListBoxItem Content="파랑"/>
                     </ListBox>
-                    <TextBlock x:Name="textSelected" FontSize="26" Margin="10"/>
-                    <ListBox x:Name="listFruits" SelectionMode="Multiple" SelectionChanged="listFruits_SelectionChanged" >
+                    <TextBlock x:Name="textSelected" FontSize="16" Margin="10"/>
+                    <!--이벤트 뒤 코드-->
+                    <ListBox x:Name="listFruits"
+SelectionMode="Multiple"
+SelectionChanged="listFruits_SelectionChanged"
+Height="100" Width="200">
                         <ListBoxItem Content="사과"/>
                         <ListBoxItem Content="바나나"/>
                         <ListBoxItem Content="오렌지"/>
                         <ListBoxItem Content="포도"/>
                     </ListBox>
+                    <!--이벤트 뒤 코드-->
                 </StackPanel>
             </TabItem>
-            <TabItem Header="데이터 바인딩">
+            <TabItem Header="데이터바인딩">
                 <ListBox x:Name="listBox">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Grid Margin="0, 2">
+                            <Grid Margin="0,2">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="100" />
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock Text="{Binding Name}"/>
-                                <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Height="30" Margin="5, 0, 0, 0" Value="{Binding Percent}"/>
+                                <!-- 이름 바인딩 -->
+                                <TextBlock Text="{Binding Name}" 
+                                   VerticalAlignment="Center" />
+
+                                <!-- 프로그레스바 바인딩 -->
+                                <ProgressBar Grid.Column="1"
+                                     Minimum="0" Maximum="100"
+                                     Value="{Binding Percent}"
+                                     Height="20" Margin="5,0,0,0" />
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
             </TabItem>
             <TabItem Header="Web">
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,10" >
-                    <WebBrowser x:Name="WebBrowser1"/>
-                    <Button x:Name="btnNaver" Content="네이버로 이동" Width="100" Margin="0,0,10,0" Click="btnNaver_Click" />
-                    <Button x:Name="btnBack" Content="뒤로가기" Width="100" Margin="0,0,10,0" Click="btnBack_Click" />
-                    <Button x:Name="btnForward" Content="앞으로 가기" Width="100" Margin="0,0,10,0" Click="btnForward_Click" />
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10" HorizontalAlignment="Left">
+                <WebBrowser x:Name="WebBrowser1" />
+                    <Button x:Name="btnNaver" Content="네이버로 이동" Width="100" Margin="0,0,10,0" Click="btnNaver_Click"/>
+                    <Button x:Name="btnBack" Content="뒤로가기" Width="80" Margin="0,0,10,0" Click="btnBack_Click"/>
+                    <Button x:Name="btnForward" Content="앞으로가기" Width="90" Click="btnForward_Click"/>
                 </StackPanel>
             </TabItem>
         </TabControl>
+        
     </Grid>
 </Window>

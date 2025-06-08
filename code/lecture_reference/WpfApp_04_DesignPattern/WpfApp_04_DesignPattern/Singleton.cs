@@ -5,13 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 #region #1. Singleton 패턴
-/*
- * - 클래스의 인스턴스를 단 하나만 생성하고, 그 하나의 인스턴스를 전역에서 공유 할 수 있도록 하는 디자인 패턴.
- * 
- * [주 목적]
- * - 공유 자원을 하나의 객체로 관리
- * - 프로그램 전체에서 중앙 통제 지점 역할
- */
 #endregion
 
 namespace WpfApp_04_DesignPattern

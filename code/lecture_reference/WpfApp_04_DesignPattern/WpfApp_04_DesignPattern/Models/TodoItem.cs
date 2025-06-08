@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace WpfApp_04_DesignPattern.Models
 {
     // [1] 데이터 모델 작성: 할 일 하나를 표현하는 객체
-    // 화면에 표시할 텍스트를 담는 단순한 클래스
     public class TodoItem
     {
         public string? Task {  get; set; } // 할 일 문자열

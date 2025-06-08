@@ -8,7 +8,7 @@ namespace WindowsFormsApp_07_Class
 {
     public partial class Square2
     {
-        // #5. 메서드
+        // #6. 메서드
         // - 넓이 구하는 기능
         public int GetArea()
         {

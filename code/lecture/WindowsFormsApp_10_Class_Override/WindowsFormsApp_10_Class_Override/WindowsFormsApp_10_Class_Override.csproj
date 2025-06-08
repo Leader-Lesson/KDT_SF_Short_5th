@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{35AF81B1-B97D-44FE-AF85-6F6C41F244B9}</ProjectGuid>
+    <ProjectGuid>{D70E7752-BF0A-4925-9C1A-9FFD9DBE2D8D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>WindowsFormsApp_10_Class_Override</RootNamespace>
     <AssemblyName>WindowsFormsApp_10_Class_Override</AssemblyName>

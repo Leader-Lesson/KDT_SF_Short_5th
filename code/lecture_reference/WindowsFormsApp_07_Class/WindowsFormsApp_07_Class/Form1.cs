@@ -86,10 +86,6 @@ namespace WindowsFormsApp_07_Class
             pc2.Print();  // (99, 20)
         }
 
-        // # 구조체와 클래스의 차이점.
-        // 구조체 : 값 형식 (Value Type)
-        // - 서로 다른 객체니까 ps1과 ps2는 독립적으로 움직임!
-        // ㄴ = 깊은 복사
         struct PointStruct
         {
             public int X;
@@ -101,9 +97,6 @@ namespace WindowsFormsApp_07_Class
             }
         }
 
-        // 클래스 : 참조 형식 (Reference Type)
-        // - 같은 객체를 가리키기 때문에, 한쪽 수정하면 둘 다 영향 받음.
-        // ㄴ = 얕은 복사
         class PointClass
         {
             public int X;

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6E51514A-D977-47B2-84BF-CBB1B6ED9C45}</ProjectGuid>
+    <ProjectGuid>{5CED2C43-889E-476A-871E-6A03AAC1B2E2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>WindowsFormsApp_06_Struct</RootNamespace>
     <AssemblyName>WindowsFormsApp_06_Struct</AssemblyName>
@@ -57,6 +57,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CF465AC5-2130-4651-9C05-5FA6B6001541}</ProjectGuid>
+    <ProjectGuid>{FB220E24-1AC8-40F1-A521-259A4CA02B0F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WindowsFormsApp_18_Task_Async_Await</RootNamespace>
     <AssemblyName>WindowsFormsApp_18_Task_Async_Await</AssemblyName>

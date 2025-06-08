@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F1192A25-B137-45BB-A677-A437AE75BC9E}</ProjectGuid>
+    <ProjectGuid>{088979A5-E3C6-4840-BFA2-E31CCDA60721}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>WindowsFormsApp_08_Class_Inheritance</RootNamespace>
-    <AssemblyName>WindowsFormsApp_08_Class_Inheritance</AssemblyName>
+    <RootNamespace>WindowsFormsApp_08_Class_inheritance</RootNamespace>
+    <AssemblyName>WindowsFormsApp_08_Class_inheritance</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

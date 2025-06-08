@@ -10,34 +10,25 @@
     <!-- [3-1] ViewModel 인스턴스를 DataContext로 연결 -->
     <Window.DataContext>
         <vm:TodoViewModel/>
-        <!-- xmlns: vm 작성하기-->
+        <!-- xmlns:vm 작성하기 -->
         <!-- ViewModel 객체 생성 및 연결 -->
     </Window.DataContext>
+
     <Grid>
-        <!--
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock x:Name="txtCount" Text="카운트: 0" FontSize="26" TextAlignment="Center"
-                       HorizontalAlignment="Center"/>
-            <Button Content="카운트 증가" Width="150" Height="40" Margin="20" Click="Button_Click" />
+      <StackPanel Margin="10">
+        <!-- [3-2] TextBox 입력값을 NewTask 속성과 바인딩 -->
+        <TextBox Text="{Binding NewTask, UpdateSourceTrigger=PropertyChanged}" FontSize="16" Margin="0,0,0,10"/>
+            <!-- UpdateSourceTrigger=PropertyChanged : 텍스트 입력이 바뀌는 즉시 ViewModel에 값을 반영하는 설정. -->
+            <!-- TextBox ↔ ViewModel 간 실시간 연동 시 거의 필수로 사용-->
+
+        <!-- [3-3] 버튼: 각각 AddTaskCommand, RemoveTaskCommand와 바인딩 -->
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <Button Content="추가" Command="{Binding AddTaskCommand}" Width="80" Margin="0,0,10,0"/>
+            <Button Content="삭제" Command="{Binding RemoveTaskCommand}" Width="80"/>
         </StackPanel>
-        -->
-        <StackPanel Margin="10">
-            <!-- [3-2] TextBox 입력값을 NewTask 속성과 바인딩 -->
-            <TextBox Text="{Binding NewTask, UpdateSourceTrigger=PropertyChanged}" 
-                     FontSize="26" Margin="0,0,0,10"/>
-                    <!-- ㄴ 텍스트 입력이 바뀌는 즉시 ViewModel에 값을 반영하는 설정 -->
-                    <!-- TextBox <-> ViewModel 간 실시간 연동 시 거의 필수로 사용.-->
-            
-            <!-- [3-3] 버튼: 각각 따로 이벤트 메서드랑 바인딩 -->
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                <Button Content="추가" Command="{Binding AddTaskCommand}" Width="80" Margin="0,0,10,0"/>
-                <Button Content="삭제" Command="{Binding RemoveTaskCommand}" Width="80"/>
-            </StackPanel>
-            
-            <!-- [3-4] 할 일 목록을 ListBox에 바인딩 -->
-            <ListBox ItemsSource="{Binding TodoItems}" 
-                     SelectedItem="{Binding SelectedItem}" 
-                     Height="180" FontSize="16"/>
-        </StackPanel>
+
+        <!-- [3-4] 할 일 목록을 ListBox에 바인딩 -->
+        <ListBox ItemsSource="{Binding TodoItems}" SelectedItem="{Binding SelectedItem}" Height="180" FontSize="16"/>
+    </StackPanel>
     </Grid>
 </Window>

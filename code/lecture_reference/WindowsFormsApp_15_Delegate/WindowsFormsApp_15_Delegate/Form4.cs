@@ -90,8 +90,5 @@ namespace WindowsFormsApp_15_Delegate
             }
         }
 
-        //del()   델리게이트 실행(축약형)
-        //del.Invoke() 델리게이트 실행(정식 표현)
-        //del?.Invoke()   등록된 함수가 있을 때만 실행(null 안전)
     }
 }

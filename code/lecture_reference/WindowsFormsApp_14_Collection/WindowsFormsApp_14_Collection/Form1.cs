@@ -17,18 +17,6 @@ namespace WindowsFormsApp_14_Collection
         {
             InitializeComponent();
             #region 컬렉션
-            // Why? (컬렉션을 사용하는 이유)
-            // ㄴ 배열의 한계
-            //      ㄴ 동적 크기 조절 불가 -> 삽입/삭제 불편
-            // ㄴ 다양한 자료구조의 필요성
-            //
-            // [컬렉션]
-            // 컬렉션은 클래스이며, 배열처럼 여러 데이터를 묶어서 관리
-            // - [참고] C#은 객체지향 언어이기 때문에, 배열을 제외한 대부분의 고급 자료구조(List, Dictionary, Stack 등)는 클래스로 정의되어 있음.
-            //          그 클래스의 인스턴스를 생성해서 사용
-            // - 자동 크기 조절 가능
-            // - 삽입, 삭제, 검색 등의 기능 제공
-            // - 데이터 관리의 유연성 증가.
 
             // 일반 배열 예시
             string[] fruits = new string[2];    // 배열 선언 시 크기 고정!
@@ -40,22 +28,6 @@ namespace WindowsFormsApp_14_Collection
             #endregion
 
             #region 1. 비제네릭 컬렉션
-            // 비제네릭 컬렉션
-            // ㄴ 내부적으로는 object 타입으로 데이터를 저장하기 때문에 모든 타입을 담을 수 있습니다.
-            //      ㄴ int, string, double 등 어떤 값을 넣어도 *자동으로 object로 박싱(Boxing)*
-            // ㄴ 어떤 자료형이든 추가할 수 있지만, 데이터를 꺼내어 사용할 때는 "형변환"이 필요.
-            // - 옛날 방식, C# 최신 개발에서는 거의 사용하지 않음
-            // - 기본 개념만 알아둘 것.
-            //
-            // Why?
-            // ㄴ 1) 타입 안정성 부족 - object 타입으로 저장되므로 잘못된 형변환으로 런타임 오류 가능성 ↑
-            // ㄴ 2) 성능 저하 - 박싱(Boxing), 언박싱(UnBoxing)이 발생 -> 메모리 사용
-            // ㄴ 3) 유지보수 어려움 - 요소 타입이 명확하지 않으므로 실수 잦음.
-            //
-            // [용어 정리]
-            // 박싱(Boxing): 값 타입 -> 참조 타입인 obejct로 변환하는 과정
-            // ㄴ int, double 같은 값 형 변수를 컬렉션에 담을 때 자동으로 object로 포장.
-            // 언박싱(UnBoxing): 박싱된 object를 다시 원래 값 타입으로 꺼내는 과정.
             #endregion
 
             #region #1. ArrayList
@@ -119,10 +91,6 @@ namespace WindowsFormsApp_14_Collection
             #endregion
 
             #region #2. Stack
-            /*
-             * 후입선출 (LIFO, Last-In-First-Out) 방식의 컬렉션.
-             * ㄴ 즉, 나중에 넣은 데이터가 먼저 나오는 구조.
-             */
 
             Console.WriteLine("\n====== Stack ======");
             Stack stack = new Stack();
@@ -165,10 +133,6 @@ namespace WindowsFormsApp_14_Collection
             #endregion
 
             #region #3. Queue
-            /*
-             * 선입선출 (FIFO, Fisrt-In-First-Out) 방식의 컬렉션
-             * ㄴ 즉, 먼저 넣은 데이터가 먼저 나오는 구조.
-             */
 
             Console.WriteLine("\n====== Queue ======");
             Queue queue = new Queue();
@@ -208,11 +172,6 @@ namespace WindowsFormsApp_14_Collection
             #endregion
 
             #region #4. Hashtable
-            /*
-             * 키(key)와 값(value) 쌍으로 데이터를 저장하는 방식의 컬렉션
-             * - 키는 중복 (x)
-             * - 값은 중복 (o)
-             */
 
             Console.WriteLine("\n====== Hashtable ======");
             Hashtable ht = new Hashtable();
@@ -228,9 +187,6 @@ namespace WindowsFormsApp_14_Collection
             Console.WriteLine($"직업: {ht["job"]}");
 
             // 데이터 반복 출력
-            // DictionaryEntry
-            // ㄴ Hashtable의 한 요소를 나타내는 키-값 쌍 구조체
-            // ㄴ 즉, key, value 값을 따로 따로 가져올 수 있음.
             Console.WriteLine("\n전체 항목:");
             foreach (DictionaryEntry entry in ht)
             {
@@ -253,30 +209,10 @@ namespace WindowsFormsApp_14_Collection
 
 
             #region 2. 제네릭 컬렉션
-            /*
-             * 제네릭 컬렉션
-             * ㄴ 클래스나 메서드를 작성할 때, 내부에서 사용할 "데이터 형식"을 나중에 지정할 수 있는 구조.
-             * ㄴ 일반적으로 <T>, <Tkey, TValue> 형태로 사용함.
-             * ㄴ 컴파일 시점에 타입이 결정되어 "형변환 없이" 안전하게 데이터 처리 가능.
-             * 
-             * Why?
-             * ㄴ 1) 타입 안정성 향상 - 런타임 오류 ↓
-             * ㄴ 2) 성능 향상 - object 변환 없이 실제 타입으로 바로 저장되므로 박싱/언박싱 (X) - 속도 ↑, 메모리 사용 ↓
-             * ㄴ 3) 가독성과 유지보수 향상 - 어떤 타입의 값이 저장되는지 명확함 -> 실수 방지
-             * 
-             * [용어 정리]
-             * 형식 매개변수(Type Parameter): 보통 T, K, V 등으로 표현 --> 실제 자료형은 사용 시 지정
-             * 
-             * [주의]
-             * - 제네릭 컬렉션은 특정 타입에만 제한되어 있으므로, 여러 타입을 저장하려면 구조체나 클래스 등으로 묶어야 한다.
-             * 
-             * - 최근 실무에서 자주 사용하는 방식 (비제네릭 컬렉션 단점 보완)
-             */
             #endregion
 
             #region #1. List<T>
             // ㄴ 배열처럼 연속된 데이터를 저장하지만, 크기가 자동으로 조절되는 자료구조.
-            // ㄴ 메서드 사용: ArrayList 메서드와 같음
 
             Console.WriteLine("\n====== List<T> ======");
             // 1. List<int> 생성
@@ -388,8 +324,6 @@ namespace WindowsFormsApp_14_Collection
 
             #region #4. Dictionary<TKey, TValue>
 
-            // ㄴ 키(key) 값(value)을 쌍으로 저장하는 컬렉션.
-            // ㄴ 내부적으로는 해시 테이블(Hash Table) 구조를 사용해서 검색 속도 매우 빠름.
 
             Console.WriteLine("\n====== Dictionary<TKey, TValue> ======");
 
@@ -402,9 +336,6 @@ namespace WindowsFormsApp_14_Collection
             scores["이영희"] = 78;   // Add 없이도 이렇게 추가 가능
 
             // 3. 전체 출력
-            // [참고]
-            // Dictionary 안의 각 요소(항목) 하나는 Key와 Value 한 쌍으로 이루어져 있습니다.
-            // 이 한 쌍을 표현하는 구조가 바로 KeyValuePair<TKey, TValue> 입니다.
             Console.WriteLine("[학생 점수 목록]");
             foreach (KeyValuePair<string, int> entry in scores)
             {

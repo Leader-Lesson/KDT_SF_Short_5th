@@ -9,12 +9,8 @@ namespace WindowsFormsApp_08_Class_inheritance
     // #1. 부모 클래스
     internal class Shape
     {
-        // 공통으로 처리할 것.
-        // Q) 필드, 속성 차이 물어보기.
-        //public string Name; // 의미: 필드 (파스칼 케이스 x)
         public string Name { get; set; }  
 
-        // 컴파일러가 내부적으로 이렇게 처리함 (실제로 보이진 않음)
         /*
         private string _name; // 자동 생성
 

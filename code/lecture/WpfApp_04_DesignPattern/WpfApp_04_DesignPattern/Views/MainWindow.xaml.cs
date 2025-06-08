@@ -9,31 +9,39 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/*
+ * 시나리오 (요구사항)
+ * 1. 버튼을 누르면 카운트가 1씩 증가
+ * 2. Label에는 현재 카운트 값을 표시
+ * 3. 카운트 상태를 전역적으로 관리
+ *    ㄴ 싱글톤 인스턴스로 공유.
+ */
+
 namespace WpfApp_04_DesignPattern.Views
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+
+            //UpdateLabel();  // 초기 값 표시.
         }
+
 
         //private void Button_Click(object sender, RoutedEventArgs e)
         //{
-        //    // [6] 싱글톤 인스턴스를 통해 카운트 증가.
+        //    // [6] 싱글톤 인스턴스를 통해 카운트 증가
         //    CounterManager.Instance.Increment();
-        //    // static 객체 이므로 클래스 이름으로도 메서드 사용 가능 (객체 생성 필요 x)
 
-        //    // [8] UI 업데이트
+        //    // [7] UI 업데이트
         //    UpdateLabel();
+            
         //}
-        ////[7] 현재 카운트 값을 읽어와서 label 갱신.
         //private void UpdateLabel()
         //{
-        //    txtCount.Text = CounterManager.Instance.Count.ToString();
+        //    // [8] 현재 카운트 값 읽어와서 Label 갱신.
+        //    //txtCount.Text = CounterManager.Instance.Count.ToString();
         //}
-    }
+    } 
 }

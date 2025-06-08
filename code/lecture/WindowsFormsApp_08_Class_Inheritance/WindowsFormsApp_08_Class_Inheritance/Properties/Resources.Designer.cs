@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp_08_Class_Inheritance.Properties
+namespace WindowsFormsApp_08_Class_inheritance.Properties
 {
 
 
@@ -44,7 +44,7 @@ namespace WindowsFormsApp_08_Class_Inheritance.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WindowsFormsApp_08_Class_Inheritance.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WindowsFormsApp_08_Class_inheritance.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

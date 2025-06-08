@@ -4,18 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApp_08_Class_Inheritance
+namespace WindowsFormsApp_08_Class_inheritance
 {
     // #1. 부모 클래스
     internal class Shape
     {
-        // 공통으로 처리할 것
-        // private string name;
+        public string Name { get; set; }  
 
-        public string Name { get; set; }
-        // 컴파일러가 내부적으로 이렇게 처리함 (실제로 보이진 않음)
         /*
-        private string _name; // 자동 필드 생성
+        private string _name; // 자동 생성
 
         public string Name
         {
@@ -36,7 +33,7 @@ namespace WindowsFormsApp_08_Class_Inheritance
         public double Width { get; set; }
         public double Height { get; set; }
 
-        // 넓이 구하는 메소드 작성 후 값 반환
+        // Q2) 넓이 구하는 메소드 작성 후 출력.
         public double GetArea()
         {
             return Width * Height;
@@ -44,7 +41,7 @@ namespace WindowsFormsApp_08_Class_Inheritance
     }
 
     // #3. 자식 클래스 : 삼각형
-    internal class Triangle : Shape
+    internal class Triangle : Shape 
     {
         public double BaseLength { get; set; }
         public double Height { get; set; }
@@ -55,10 +52,11 @@ namespace WindowsFormsApp_08_Class_Inheritance
         }
     }
 
-    // #4. 자식 클래스 : 원
+    // #4. 자식 클래스: 원
     internal class Circle : Shape
     {
         public double Radius { get; set; }
+
         public double GetArea()
         {
             return Math.PI * Radius * Radius;

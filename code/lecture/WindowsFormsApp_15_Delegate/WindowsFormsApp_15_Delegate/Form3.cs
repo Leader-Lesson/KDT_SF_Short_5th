@@ -13,109 +13,96 @@ namespace WindowsFormsApp_15_Delegate
     // #1. 일반 델리게이트
     public delegate void Notify(); // 1. 델리게이트 타입 정의
 
-    // [1]. event 키워드 사용
-    public delegate void Notify2();
+    // #2. event 키워드 사용
+    public delegate void Notify2(); 
 
+   
     public partial class Form3 : Form
     {
-        // #2. 메서드 정의
         static void AlarmMessage()
         {
             Console.WriteLine("알람 울림");
         }
 
-        // ##1. 사용자 정의 이벤트 선언
+        // ## 1. 사용자 정의 이벤트 선언
         public event EventHandler MyEvent;
-        //  object sender: 이벤트를 발생시킨 객체(ex.button1)
-        //  EventArgs e: 이벤트에 대한 정보
 
         public Form3()
         {
             InitializeComponent();
 
+            // ## 2. 이벤트 핸들러 등록
+            MyEvent += ShowConsoleMessage;
+            MyEvent += ShowPopup;
+
+            // ## 3. 버튼 클릭 시 이벤트 실행
+            btnTrigger.Click += BtnTrigger_Click;
+
+
             Alarm alarm = new Alarm();
 
             Alarm2 alarm2 = new Alarm2();
 
-            // ##2. 이벤트 핸들러 등록
-            MyEvent += ConsoleMessage;
-
-            // ##3. 이벤트를 발생시켜주는 트리거 메서드
-            btnTrigger.Click += BtnTrigger_Click;
-
-
-            // #4. 델리게이트 변수에 메서드 할당.
+            // 3. 델리게이트 변수에 메서드 할당
             alarm.OnRing += AlarmMessage;
 
-            // [4] Event 델리게이트 메서드 할당
-            alarm2.OnRing += AlarmMessage;
+            alarm2.OnRing += AlarmMessage;  // 외부에서 등록만 가능.
 
-            // #5. 실행
-            alarm.OnRing(); // AlarmMessage 실행
+            // 4. 실행
+            alarm.OnRing(); // AlarmMessage 실행.
+            // 외부에서 마음대로 실행 가능
 
-            // [5]. Event 델리게이트 실행
-            //alarm2.OnRing(); // 컴파일 오류
+            //alarm2.OnRing();    // 컴파일 에러
             alarm2.Trigger();   // 클래스 내부 메서드만 가능 -> 안전함.
         }
 
-        // ##3. 메서드 작성
-        private void ConsoleMessage(object sender, EventArgs e)
-        {
-            Console.WriteLine("[이벤트 발생]");
-        }
-
-        // ##4. 트리거 메소드 작성
+        // [4] 이벤트를 발생시키는 트리거 메서드
         private void BtnTrigger_Click(object sender, EventArgs e)
         {
-            // ##5. 이벤트 발생
+            // [5] 이벤트 발생 - 반드시 null 체크
             MyEvent?.Invoke(this, EventArgs.Empty);
         }
 
-
-        // #3. 클래스 정의
-        public class Alarm
+        // [6] 콘솔 출력용 핸들러
+        private void ShowConsoleMessage(object sender, EventArgs e)
         {
-            public Notify OnRing;   // Notify 타입 변수 선언
+            Console.WriteLine("[이벤트 발생] 콘솔 메시지 출력!");
         }
 
-        // [3]. Event 클래스 정의
-        public class Alarm2
+        // [7] 메시지박스 출력용 핸들러
+        private void ShowPopup(object sender, EventArgs e)
         {
-            public event Notify2 OnRing; // Notify2 타입 변수 선언
-
-            public void Trigger()
-            {
-                if (OnRing != null)
-                {
-                    OnRing();
-                }
-            }
+            MessageBox.Show("이벤트가 발생했습니다!", "알림");
         }
+
 
         // # 이벤트 메서드
-        // - VS가 자동으로 "delegate 형식(EventHandler delegate)"에 맞춰서
-        //   만들어준 이벤트 핸들러 메서드.
         private void button1_Click(object sender, EventArgs e)
         {
 
         }
-        /*
-         * Button 클래스 내부
-         * public event EventHandler Click; // 델리게이트 기반 이벤트
-         * button.Click += new EventHandler(button1_Click);
-         * 
-         * 즉, 우리가 button1_Click()이라고 만든 함수는
-         * EventHandler라는 델리게이트에 연결되는 핸들러 함수에요.
-         * 
-         * EventHandler?
-         * ㄴ .NET에서 미리 정의된 델리게이트 타입.
-         * 
-         * object sender: 이벤트를 발생시킨 객체 (ex. button1)
-         * EventArgs e: 이벤트에 대한 정보
-         * 
-         * 1. 이미 정의된 이벤트(Button.Click 등)를 사용할 때
-         *    ㄴ 우리는 그냥 이벤트에 연결한 메서드만 만들면 됨.
-         * 2. 내가 직접 이벤트를 만들고 싶을 때 -> 반드시 event 필요.
-         */
+
+
+
+    }
+
+    public class Alarm
+    {
+        public Notify OnRing;   // 2. Notify 타입 변수 선언
+    }
+
+    // event
+    public class Alarm2
+    {
+        public event Notify2 OnRing;    
+
+        public void Trigger()
+        {
+            // null 체크는 꼭 해줘야함.
+            // ㄴ 등록된 함수가 하나도 없을 수 있기 때문
+            if (OnRing != null)
+                OnRing();  // 또는 OnRing?.Invoke(); // 내부에서만 실행 가능
+            // Invoke()는 델리게이트(delegate)가 참조하고 있는 메서드를 실행시키는 함수
+        }
     }
 }

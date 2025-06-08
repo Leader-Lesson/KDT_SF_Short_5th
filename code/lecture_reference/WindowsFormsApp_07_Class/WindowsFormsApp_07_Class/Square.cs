@@ -7,26 +7,10 @@ using System.Threading.Tasks;
 
 /*
  * #7. 네임스페이스 선언
- * - 클래스들을 구분하는 그룹 이름.
- * - 같은 이름의 클래스가 여러 곳에 있어도 충돌하지 않게 도와줌.
- * - 주로 "프로젝트 이름"을 지음.
- * 
- * 현재 namespace WindowsFormsApp_07_Class
- * {
- *      internal class Square
- * }
- * 
- * 다른 namespace AnotherNameSpace
- * {
- *      internal class Square   // 이름 같아도 문제 없음.
- * }
  */
 namespace WindowsFormsApp_07_Class
 {
     // #1. Sqaure 클래스 정의
-    // - 정사각형
-    // - 속성: 변의 길이
-    // - 메서드: 넓이를 구하는 기능.
     internal class Square
     {
         // #2. 필드

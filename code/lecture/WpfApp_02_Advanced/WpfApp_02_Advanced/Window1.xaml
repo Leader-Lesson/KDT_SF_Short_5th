@@ -7,13 +7,8 @@
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <Grid>
-        <StackPanel Margin="10">
-            <WrapPanel>
-                <Button x:Name="btnOpen" Content="File Oepn" Width="100" Margin="5" Click="btnOpen_Click"/>
-                <Button x:Name="btnGetData" Content="Get Data" Width="100" Margin="5" Click="btnGetData_Click" />
-            </WrapPanel>
-            <Label x:Name="lblPath" Content="파일 경로" Margin="5"/>
-            <DataGrid x:Name="dataGrid" Height="200" Margin="5"/>
-        </StackPanel>
+        <Button x:Name="btnImage" Content="이미지 열기"
+                Width="150" Height="50" 
+                Click="btnImage_Click"/>
     </Grid>
 </Window>

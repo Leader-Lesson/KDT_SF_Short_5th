@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp_08_Class_Inheritance
+namespace WindowsFormsApp_08_Class_inheritance
 {
     internal static class Program
     {

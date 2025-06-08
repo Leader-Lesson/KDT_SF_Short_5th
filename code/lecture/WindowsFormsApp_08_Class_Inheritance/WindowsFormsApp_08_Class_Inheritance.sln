@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35919.96 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp_08_Class_Inheritance", "WindowsFormsApp_08_Class_Inheritance\WindowsFormsApp_08_Class_Inheritance.csproj", "{F1192A25-B137-45BB-A677-A437AE75BC9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp_08_Class_inheritance", "WindowsFormsApp_08_Class_inheritance\WindowsFormsApp_08_Class_inheritance.csproj", "{088979A5-E3C6-4840-BFA2-E31CCDA60721}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F1192A25-B137-45BB-A677-A437AE75BC9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F1192A25-B137-45BB-A677-A437AE75BC9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F1192A25-B137-45BB-A677-A437AE75BC9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F1192A25-B137-45BB-A677-A437AE75BC9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{088979A5-E3C6-4840-BFA2-E31CCDA60721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{088979A5-E3C6-4840-BFA2-E31CCDA60721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{088979A5-E3C6-4840-BFA2-E31CCDA60721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{088979A5-E3C6-4840-BFA2-E31CCDA60721}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B499AC88-24FB-4F80-B378-EA1DB1B7820F}
+		SolutionGuid = {8A9AD3C7-4815-461B-A985-10ED38A0EAA4}
 	EndGlobalSection
 EndGlobal

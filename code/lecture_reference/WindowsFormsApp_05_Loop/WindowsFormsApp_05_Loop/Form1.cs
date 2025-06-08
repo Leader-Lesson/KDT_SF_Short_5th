@@ -18,19 +18,6 @@ namespace WindowsFormsApp_05_Loop
             #region 반복문 강의 
 
             #region #1. 일반 반복문 강의 & 예제
-            /*
-            * - 어떤 코드를 정해진 횟수만큼 반복 실행 할때 사용.
-            * 
-            * 구조
-            * for (초기식; 조건식; 증감식)
-            * {
-            *      반복할 코드
-            * }
-            * 
-            * 초기식 : 변수 선언 or 초기화
-            * 조건식 : 반복할 조건. -> true면 계속 실행
-            * 증감식 : 변수 값 변화시켜 반복 실행 제어 -> ++ / --
-            */
 
             // Ex1) 0 ~ 5 출력.
             for (int i = 0; i < 5; i++)
@@ -163,13 +150,6 @@ namespace WindowsFormsApp_05_Loop
             #endregion
 
             #region #2. 배열 반복문 강의 & 예제
-            /*
-             * Why? 배열 - 반복문을 사용하는 이유
-             * - 하나하나 출력하기에 너무 비효율적!
-             * 
-             * .Length : 배열의 크기(길이)
-             */
-
             // [Before]
             string[] fruits = { "사과", "바나나", "포도", "딸기" };
             Console.WriteLine(fruits[0]); 
@@ -191,17 +171,6 @@ namespace WindowsFormsApp_05_Loop
             Console.WriteLine("----------------");
 
             // # foreach문 사용
-            /*
-             * ㄴ 배열의 모든 항목을 "처음부터 끝까지 하나씩" 꺼내며 반복 실행하는 문법
-             * ㄴ 배열을 순회하면서 각 요소에 대해 동일한 작업을 수행할 때 사용.
-             * ㄴ 순서가 있는 구조 반복에 적합!
-             * 
-             * 구조
-             * foreach (자료형 변수명 in 배열이름)
-             * {
-             *      // 배열의 항목 하나씩 사용
-             * }
-             */
 
             // Ex1) 위 예제 foreach 버전.
             string[] fruits3 = { "사과", "바나나", "포도", "딸기" };
@@ -269,15 +238,6 @@ namespace WindowsFormsApp_05_Loop
             #endregion
 
             #region #3. while문 강의
-            /*
-             * - 조건이 "참"일 동안 계속해서 반복하는 반복문. (조건이 false가 될 때까지 무한 반복 가능)
-             * 
-             * 구조
-             * while (조건식)
-             * {
-             *      조건이 true일 때 실행할 코드
-             * }
-             */
 
             Console.Clear();
 
@@ -370,15 +330,6 @@ namespace WindowsFormsApp_05_Loop
         {
             textBox_result.Text = ""; // 결과창 비우고 시작.
 
-            /*
-             * (참고)
-             * int.TryParse(string 입력 값, out number)
-             * ㄴ 사용자 입력이 숫자인지 안전하게 확인하게 해주는 메서드.
-             * ㄴ 문자열을 숫자로 변환할 때, 변환이 가능한 경우에만 값을 저장하고 true를 반환.
-             * ㄴ 변환에 실패하더라도 오류를 발생시키지 않고 false를 반환함.
-             * 
-             * ㄴ "문자열을 int로 바꿔보려고 시도해서, 성공하면 그 값을 number에 저장하고 true를 반환한다"
-             */
 
             // 2. 숫자를 입력했을 때만 실행.
             Random rand = new Random();

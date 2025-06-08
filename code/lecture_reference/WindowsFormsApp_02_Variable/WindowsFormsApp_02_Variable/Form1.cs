@@ -67,37 +67,16 @@ namespace WindowsFormsApp_02_Variable
 
             textBox_print.Text += numOfCrew.GetType() +" numOfCrew : " + numOfCrew.ToString() + "\r\n";
 
-            /*
-             * #1. 실습. 변수 및 캐스팅
-             * 
-             */
 
-
-            // # 연산자.
-            /*
-             * 대입 연산자 (=)
-             * : 변수에 값을 "할당" 할 때 사용하는 연산자
-             * 
-             * 산술 연산자
-             * 사칙연산: +, -, /, *
-             * 나머지 연산: %
-             * 거듭제곱 연산: **
-             */
 
             int a = 5;
             int b = 2;
-            // (참고)
-            // TextBox 컨트롤은 "사용자에게 텍스트(문자열)"을 보여주기 위한 도구.
-            // textBox_print.Text 는 자료형이 string(문자열)임.
-            // ㄴ 숫자를 바로 넣을 수 없음.
 
             // #1. 형변환 방법
             // textBox_print.Text = (a + b).ToString(); 
 
             // #2. 문자열 보간 방법
             // $"{표현식}" 형태,
-            // ㄴ 안에 있는 코드를 계산하고 자동으로 문자열로 만들어줌.
-            // ㄴ 깔끔하고, 가독성이 좋아서 요즘 자주 사용됨.
             // textBox_print.Text = $"{a + b}";
 
             textBox_print.Text = $"{a - b} \r\n";
@@ -106,12 +85,6 @@ namespace WindowsFormsApp_02_Variable
             textBox_print.Text += $"{a % b} \r\n";
             //textBox_print.Text += $"{a ** b} \r\n"; // Error!
 
-            // (참고) C#에서의 거듭제곱!
-            // ㄴ 문법적으로 **연산자가 존재하지 않음.
-            // ㄴ Math.Pow() 라는 메서드를 사용해야함. -- 아직 메서드를 안배움.
-            // ㄴ Math.Pow(밑, 지수);
-            // ㄴ 결과는 항상 double로 반환됨.
-            // ㄴ C, C++ pow() 메서드 사용. 파이선 ** 사용.
             textBox_print.Text += $"{Math.Pow(a,b)} \r\n";
             // Math.Sqrt() -> 제곱근!
             textBox_print.Text += $"{Math.Sqrt(9)} \r\n";
@@ -179,7 +152,6 @@ namespace WindowsFormsApp_02_Variable
             textBox_print.Text += $"{num *= num2} \r\n"; // 120
             textBox_print.Text += $"{num /= num2} \r\n"; // 12
 
-            // (실습) 노션 링크
         }
     }
 }

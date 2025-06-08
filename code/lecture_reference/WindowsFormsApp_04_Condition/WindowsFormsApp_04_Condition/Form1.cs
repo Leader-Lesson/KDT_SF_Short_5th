@@ -16,8 +16,6 @@ namespace WindowsFormsApp_04_Condition
         {
             InitializeComponent();
 
-            // #region 이란?
-            // ㄴ VS에서 특정 코드 블록을 접어서 숨기게 만들어주는 기능.
 
 
             #region #1 if문 강의
@@ -117,18 +115,11 @@ namespace WindowsFormsApp_04_Condition
             #endregion
 
             #region #3-3 goto 점프문
-            // goto
-            // ㄴ 특정한 라벨(label)로 점프해서 코드를 실행하도록 하는 명령문.
-            // ㄴ 코드 순서를 무시하고, 지정한 위치로 순간이동함.
-            // ㄴ 되도록 사용 권장 x
-            // ㄴ 특정 상황에서 빠르게 탈출, 중첩 반복문 빠져나갈 때 사용.
-            // - 가독성 저하 / 유지보수 어려움 / 코드흐름에 혼란 야기. = 알아만 둘 것!
 
             int selection = 0;
             textBox_print.Text += "Start \r\n";
 
         // #2 (이동할 어딘가에 라벨 생성)
-        //    ㄴ 라벨이름 :
         Location1:
             // 여기에 도착!
             textBox_print.Text += "Location1 \r\n";
@@ -142,10 +133,6 @@ namespace WindowsFormsApp_04_Condition
             }
 
             // goto & switch
-            // swtich 에서 goto case 쓰는 목적!
-            // ㄴ 여러 case에서 같은 코드를 실행해야 할 때, 중복 없이 깔끔하게 처리 가능.
-            // (참고)
-            // https://www.notion.so/switch-goto-case-1e4d6fe891f280918fc5c495a7af6afb
 
             CoffeeMenu choice = CoffeeMenu.WithIceCream; // 3
 
@@ -173,32 +160,11 @@ namespace WindowsFormsApp_04_Condition
         {
             // 난수를 생성하기 위한 클래스 (기본적으로 현재시간을 기준으로 시드 자동 생성)
             Random randomObj = new Random();
-            //    /*
-            //     * Random : 클래스
-            //     * new Random() : Random 클래스를 이용해서 'random'이라는 객체를 만든 것.
-            //     * random : 만든 객체
-            //    */
 
 
 
             //    // 짝수/홀수로 나눠서 0 or 1 결정하게 하기.
             int coin = randomObj.Next() % 2; // rnd.Next() : 0보다 크고 매우 큰 int 값을 반환
-            //    /*
-            //     * (참고)
-            //     * rnd.Next() - 0 이상 int.MaxValue 미만 까지 (약 ~21억) : 범위를 주지 않으면, 아주 큰 양수 범위 안에서 랜덤 뽑기.
-            //     * rnd.Next(max) - 0 이상 max 미만
-            //     * rnd.Next(min, max) - min 이상 max 미만
-            //     * random.NextDouble() - 0.0 이상 1.0 미만 소수 랜덤 생성
-            //     * 
-            //     * Random은 재사용이 좋다
-            //     */
-
-            //    /*
-            //     * Math (= 내장 클래스)
-            //     * Math.Round() - 반올림       ex) 2.5 -> 3  / 2.2 -> 2
-            //     * Math.Floor() - 내림, 버림    ex) 2.7 -> 2
-            //     * Math.Ceiling() - 올림      ex) 2.1 -> 3
-            //    */
 
                 if ((coin == 1 && type == true) || (coin == 0 && type == false))
             {
@@ -208,10 +174,6 @@ namespace WindowsFormsApp_04_Condition
             //    // 동전 결과와 사용자의 선택이 일치할 경우에만 true 반환.
 
             return false;
-            //    // 일치하지 않으면, false 반환.
-            //    // else에 들어가는 것도 상관없음
-            //    // 개인적으로, 모든 return이 중괄호에 있는 것이
-            //    // 직관적이지 않다고 판단되어, else를 사용하지 않음.
             //}
 
             //    bool CoinMatch(bool type)
@@ -284,21 +246,7 @@ namespace WindowsFormsApp_04_Condition
         #endregion
 
         #region #3 Enum 열거형
-        // ㄴ 관련된 값들을 정수 기반 상수 목록으로 이름 붙여서 그룹화한 사용자 정의 자료형.
-        // ㄴ (= 서로 관련 있는 값들을 묶어서 이름을 붙여주는 사용자 정의 자료형)
-        // ㄴ 기본값은 0 부터 1씩 증가.
-        // ㄴ 값 지정 가능.
 
-        // Why?
-        // ㄴ 코드의 의미가 명확해짐.
-        // ㄴ 값이 바뀌어도 유지보수 쉬움.
-        // ㄴ 가독성 증가.
-        // ㄴ 사용: 점(.)접근법
-
-        /*
-         * (참고) Enum을 사용하는 이유?
-         * https://www.notion.so/Enum-1e4d6fe891f280d78defc9533c7a2cad
-        */
 
         enum Food
         {

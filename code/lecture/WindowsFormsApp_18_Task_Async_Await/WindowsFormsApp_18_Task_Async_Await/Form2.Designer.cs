@@ -28,36 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnOpenFile = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnOpenFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnOpenFile
-            // 
-            this.btnOpenFile.Location = new System.Drawing.Point(58, 79);
-            this.btnOpenFile.Name = "btnOpenFile";
-            this.btnOpenFile.Size = new System.Drawing.Size(141, 114);
-            this.btnOpenFile.TabIndex = 0;
-            this.btnOpenFile.Text = "파일 열기";
-            this.btnOpenFile.UseVisualStyleBackColor = true;
-            this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Gulim", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(223, 79);
+            this.textBox1.Location = new System.Drawing.Point(84, 32);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(711, 639);
-            this.textBox1.TabIndex = 1;
+            this.textBox1.Size = new System.Drawing.Size(440, 322);
+            this.textBox1.TabIndex = 0;
+            // 
+            // btnOpenFile
+            // 
+            this.btnOpenFile.Location = new System.Drawing.Point(569, 140);
+            this.btnOpenFile.Name = "btnOpenFile";
+            this.btnOpenFile.Size = new System.Drawing.Size(164, 106);
+            this.btnOpenFile.TabIndex = 1;
+            this.btnOpenFile.Text = "파일　열기";
+            this.btnOpenFile.UseVisualStyleBackColor = true;
+            this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1096, 889);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnOpenFile);
+            this.Controls.Add(this.textBox1);
             this.Name = "Form2";
             this.Text = "Form2";
             this.ResumeLayout(false);
@@ -67,7 +66,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnOpenFile;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnOpenFile;
     }
 }
